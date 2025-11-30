@@ -62,9 +62,9 @@
         [
           #home-manager.nixosModules.home-manager
           stylix.nixosModules.stylix
-          impermanence.nixosModules.impermanence
+          #impermanence.nixosModules.impermanence
           disko.nixosModules.disko
-          lanzaboote.nixosModules.lanzaboote
+          #lanzaboote.nixosModules.lanzaboote
           chaotic.nixosModules.default
           sops-nix.nixosModules.sops
           nur.modules.nixos.default
