@@ -1,12 +1,12 @@
-{
-  self,
-  allDirs,
-  ...
-}:
+{ config, ... }:
 
-let
-  modules = "${self}/system/machine/wisteria";
-in
 {
-  imports = allDirs modules;
+  module = {
+    boot.enable = true;
+  };
+
+  nix.settings.trusted-users = [
+    "kiroris"
+    "root"
+  ];
 }
