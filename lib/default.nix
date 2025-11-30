@@ -7,7 +7,7 @@
 
   constructors = [
     #"${self}/home"
-    #"${self}/system"
+    "${self}/system"
   ];
 
   allDirs = dirName:

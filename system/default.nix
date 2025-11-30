@@ -20,12 +20,12 @@ in
 {
   imports =
     [
-      "${self}/modules"
+      "${self}/modules1"
       "${self}/overlays/nixpkgs"
       "${self}/system/${hostType}/modules"
     ]
-    #++ optional machineConfigurationPathExist machineConfigurationPath
-    #++ optional machineModulesPathExist machineModulesPath;
+    ++ optional machineConfigurationPathExist machineConfigurationPath
+    ++ optional machineModulesPathExist machineModulesPath;
 
   module.nix-config.enable = true;
   system = { inherit stateVersion; };
