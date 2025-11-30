@@ -20,7 +20,7 @@ in
 {
   imports =
     [
-      "${self}/modules1"
+      "${self}/modules"
       "${self}/overlays/nixpkgs"
       "${self}/system/${hostType}/modules"
     ]
