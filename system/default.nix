@@ -23,8 +23,8 @@ in
       "${self}/modules"
       "${self}/overlays/nixpkgs"
       "${self}/system/${hostType}/modules"
-      "${self}/system/machine/${machineDir}"
-      "${self}/system/machine/${machineDir}/modules"
+     # "${self}/system/machine/${machineDir}"
+     # "${self}/system/machine/${machineDir}/modules"
     ]
     ++ optional machineConfigurationPathExist machineConfigurationPath
     ++ optional machineModulesPathExist machineModulesPath;

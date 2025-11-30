@@ -17,15 +17,6 @@ _:
         "noatime"
       ];
     };
-
-  #  "/media/samsung_ssd" = {
-  #    fsType = "xfs";
-  #    device = "/dev/disk/by-id/ata-Samsung_SSD_870_EVO_1TB_S74ZNL0X317962K-part1";
-  #    options = [
-  #      "defaults"
-  #      "noatime"
-  #    ];
-  #  };
   };
 
   disko.devices = {
