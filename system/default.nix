@@ -18,16 +18,13 @@ let
   machineModulesPathExist = builtins.pathExists machineModulesPath;
 in
 {
-  imports =
-    [
-      "${self}/modules"
-      "${self}/overlays/nixpkgs"
-      "${self}/system/${hostType}/modules"
-     # "${self}/system/machine/${machineDir}"
-     # "${self}/system/machine/${machineDir}/modules"
-    ]
-    ++ optional machineConfigurationPathExist machineConfigurationPath
-    ++ optional machineModulesPathExist machineModulesPath;
+  imports = [
+    "${self}/modules"
+    "${self}/overlays/nixpkgs"
+    "${self}/system/${hostType}/modules"
+  ]
+  ++ optional machineConfigurationPathExist machineConfigurationPath
+  ++ optional machineModulesPathExist machineModulesPath;
 
   module.nix-config.enable = true;
   system = { inherit stateVersion; };
