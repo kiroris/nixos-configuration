@@ -20,7 +20,7 @@ in
 
       useNixPackageManagerConfig = mkOption {
         type = bool;
-        description = "Whether to use custom Nix package manager settings.";
+        description = "Whether to use custom Nix package manager settings";
         default = true;
       };
     };

@@ -3,6 +3,7 @@
   inputs,
   ...
 }:
+
 let
   defaultStateVersion = "25.05";
 
@@ -42,7 +43,7 @@ let
           inputs.nixpkgs.lib.nixosSystem;
     in
     nixosSystem {
-      #system = platform; # Костыль)
+      #system = platform; # crutch for dev
       specialArgs = {
         inherit
           inputs
