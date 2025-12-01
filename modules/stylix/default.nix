@@ -7,6 +7,7 @@
   theme,
   ...
 }:
+
 let
   inherit (lib) mkEnableOption mkOption mkIf;
   inherit (lib) optionalAttrs;
