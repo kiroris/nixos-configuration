@@ -6,7 +6,6 @@
   username,
   ...
 }:
-
 let
   inherit (lib) mkEnableOption mkIf;
 

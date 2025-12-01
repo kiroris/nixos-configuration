@@ -3,7 +3,6 @@
   lib,
   ...
 }:
-
 let
   inherit (lib) mkEnableOption mkIf;
 

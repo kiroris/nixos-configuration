@@ -2,7 +2,6 @@
   inputs,
   ...
 }:
-
 let
   baseSettings = {
     config = {
