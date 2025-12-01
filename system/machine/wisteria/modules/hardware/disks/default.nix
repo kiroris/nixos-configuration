@@ -1,7 +1,7 @@
 _:
 
 {
-  disk = {
+  disk.devices = {
     main = {
       type = "disk";
       device = "/dev/disk/by-id/nvme-Netac_NVMe_SSD_500GB_MAX20230613500G46830";
