@@ -38,7 +38,8 @@ let
       nixosSystem =
         if stateVersion == defaultStateVersion then
           inputs.stable.lib.nixosSystem
-        else inputs.nixpkgs.lib.nixosSystem;
+        else
+          inputs.nixpkgs.lib.nixosSystem;
     in
     nixosSystem {
       #system = platform; # Костыль)
@@ -64,7 +65,7 @@ let
       };
 
       modules =
-         with inputs;
+        with inputs;
         [
           #home-manager.nixosModules.home-manager
           stylix.nixosModules.stylix
