@@ -36,8 +36,8 @@ let
       hyprlandEnable = wm == "hyprland";
       wmEnable = hyprlandEnable || swayEnable;
       nixosSystem =
-        if stateVersion == defaultStateVersion
-          then inputs.stable.lib.nixosSystem
+        if stateVersion == defaultStateVersion then
+          inputs.stable.lib.nixosSystem
         else inputs.nixpkgs.lib.nixosSystem;
     in
     nixosSystem {
@@ -64,20 +64,21 @@ let
       };
 
       modules =
-        with inputs;
+         with inputs;
         [
           #home-manager.nixosModules.home-manager
           stylix.nixosModules.stylix
           #impermanence.nixosModules.impermanence
           disko.nixosModules.disko
           #lanzaboote.nixosModules.lanzaboote
-          chaotic.nixosModules.default
-          sops-nix.nixosModules.sops
-          nur.modules.nixos.default
+          #chaotic.nixosModules.default
+          #sops-nix.nixosModules.sops
+          #nur.modules.nixos.default
         ]
         ++ constructors;
     };
-in {
+in
+{
   forAllSystems = inputs.nixpkgs.lib.systems.flakeExposed;
 
   # LEGACY REMNANTS: This function just add mkHost or mkHostDarwin before hosts attrset
