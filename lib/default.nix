@@ -71,10 +71,10 @@ let
           stylix.nixosModules.stylix
           #impermanence.nixosModules.impermanence
           disko.nixosModules.disko
-          #lanzaboote.nixosModules.lanzaboote
-          #chaotic.nixosModules.default
-          #sops-nix.nixosModules.sops
-          #nur.modules.nixos.default
+          lanzaboote.nixosModules.lanzaboote
+          chaotic.nixosModules.default
+          sops-nix.nixosModules.sops
+          nur.modules.nixos.default
         ]
         ++ constructors;
     };
