@@ -7,7 +7,8 @@ let
   inherit (lib) mkEnableOption mkIf;
 
   cfg = config.module.xdg;
-in {
+in
+{
   options = {
     module.xdg = {
       enable = mkEnableOption "Enables xdg";
