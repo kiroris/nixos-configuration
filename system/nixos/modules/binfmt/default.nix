@@ -19,7 +19,7 @@ in
     boot.binfmt = {
       emulatedSystems = [ "aarch64-linux" ];
 
-      # our archs that we want to emulate
+      # Our archs that we want to emulate
       registrations = {
         aarch64-linux.interpreter = "${pkgs.qemu}/bin/qemu-aarch64";
         i686-linux.interpreter = "${pkgs.qemu}/bin/qemu-i686";
