@@ -3,12 +3,14 @@
   config,
   pkgs,
   ...
-}: let
+}:
+let
   inherit (lib) mkOption;
   inherit (lib.types) enum str;
 
   cfg = config.module.defaults;
-in {
+in
+{
   options.module.defaults = {
     appLauncher = mkOption {
       type = enum [
@@ -17,16 +19,17 @@ in {
         "fuzzel"
       ];
 
-      default = "wofi"; #rofi-wayland
+      default = "wofi"; # rofi-wayland
     };
 
-    appLauncherCmd = let
-      appLauncherExecs = {
-        rofi-wayland = "${pkgs.rofi-wayland}/bin/rofi -show drun";
-        wofi = "${pkgs.wofi}/bin/wofi --show drun";
-        fuzzel = "${pkgs.fuzzel}/bin/fuzzel --show drun";
-      };
-    in
+    appLauncherCmd =
+      let
+        appLauncherExecs = {
+          rofi-wayland = "${pkgs.rofi-wayland}/bin/rofi -show drun";
+          wofi = "${pkgs.wofi}/bin/wofi --show drun";
+          fuzzel = "${pkgs.fuzzel}/bin/fuzzel --show drun";
+        };
+      in
       mkOption {
         type = str;
         default = appLauncherExecs.${cfg.appLauncher};
