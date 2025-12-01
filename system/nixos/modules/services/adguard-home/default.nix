@@ -7,11 +7,22 @@
 }:
 
 let
-  inherit (lib) mkEnableOption mkIf mkOption mkForce;
-  inherit (lib.types) str listOf attrs int;
+  inherit (lib)
+    mkEnableOption
+    mkIf
+    mkOption
+    mkForce
+    ;
+  inherit (lib.types)
+    str
+    listOf
+    attrs
+    int
+    ;
   inherit (utils) genJqSecretsReplacementSnippet;
 
-  genYqSecretsReplacementSnippet = attrs: fileIn: fileOut:
+  genYqSecretsReplacementSnippet =
+    attrs: fileIn: fileOut:
     (genJqSecretsReplacementSnippet attrs fileIn)
     + ''
       ${pkgs.yq-go}/bin/yq -Poy ${fileIn} > ${fileOut}
@@ -38,29 +49,33 @@ in
 
       bindHosts = mkOption {
         type = listOf str;
-        default = ["0.0.0.0"];
+        default = [ "0.0.0.0" ];
       };
 
       dnsRewrites = mkOption {
         type = listOf attrs;
-        default = [];
+        default = [ ];
       };
 
       users = mkOption {
         type = listOf attrs;
-        default = [];
+        default = [ ];
       };
     };
   };
 
   config = mkIf cfg.enable {
     systemd.services.adguardhome = {
-      preStart = mkForce (genYqSecretsReplacementSnippet config.services.adguardhome.settings "/var/lib/AdGuardHome/AdGuardHome.json" "/var/lib/AdGuardHome/AdGuardHome.yaml");
+      preStart = mkForce (
+        genYqSecretsReplacementSnippet config.services.adguardhome.settings
+          "/var/lib/AdGuardHome/AdGuardHome.json"
+          "/var/lib/AdGuardHome/AdGuardHome.yaml"
+      );
 
       serviceConfig = {
         DynamicUser = mkForce false;
 
-        # hardening
+        # Hardening
         LockPersonality = true;
         MemoryDenyWriteExecute = true;
         NoNewPrivileges = true;
