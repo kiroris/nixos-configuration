@@ -18,25 +18,28 @@ let
     ) (map (module: "${dirName}/${module}") (builtins.attrNames (builtins.readDir dirName)));
 
   # Helper function for generating host configs
-  mkHost = machineDir: {
-    username ? "user",
-    stateVersion ? defaultStateVersion,
-    hmStateVersion ? stateVersion,
-    platform ? "x86_64-linux",
-    hostname ? machineDir,
-    isWorkstation ? false,
-    wm ? null,
-    theme ? "nord",
-    hostType ? "nixos",
-  }: let
-    swayEnable = wm == "sway";
-    hyprlandEnable = wm == "hyprland";
-    wmEnable = hyprlandEnable || swayEnable;
-    nixosSystem =
-      if stateVersion == defaultStateVersion
-      then inputs.stable.lib.nixosSystem
-      else inputs.nixpkgs.lib.nixosSystem;
-  in
+  mkHost =
+    machineDir:
+    {
+      username ? "user",
+      stateVersion ? defaultStateVersion,
+      hmStateVersion ? stateVersion,
+      platform ? "x86_64-linux",
+      hostname ? machineDir,
+      isWorkstation ? false,
+      wm ? null,
+      theme ? "nord",
+      hostType ? "nixos",
+    }:
+    let
+      swayEnable = wm == "sway";
+      hyprlandEnable = wm == "hyprland";
+      wmEnable = hyprlandEnable || swayEnable;
+      nixosSystem =
+        if stateVersion == defaultStateVersion
+          then inputs.stable.lib.nixosSystem
+        else inputs.nixpkgs.lib.nixosSystem;
+    in
     nixosSystem {
       #system = platform; # Костыль)
       specialArgs = {
@@ -60,7 +63,8 @@ let
           ;
       };
 
-      modules = with inputs;
+      modules =
+        with inputs;
         [
           #home-manager.nixosModules.home-manager
           stylix.nixosModules.stylix
