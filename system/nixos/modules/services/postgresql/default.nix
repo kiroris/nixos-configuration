@@ -49,14 +49,14 @@ in
       let
         inherit (cfg) configurations;
 
-        ensureDatabases = ["root"] ++ configurations;
+        ensureDatabases = [ "root" ] ++ configurations;
 
         ensureUsers = map (name: {
           inherit name;
           ensureDBOwnership = true;
           ensureClauses =
-              if name == "root"
-              then {
+            if name == "root" then
+              {
                 createdb = true;
                 createrole = true;
                 superuser = true;
