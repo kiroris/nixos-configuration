@@ -125,12 +125,14 @@
 
   outputs =
     { self, flake-parts, ... }@inputs:
+
     let
       # Description of hosts
       hosts = import ./hosts.nix;
 
       # Import helper funcfions
       libx = import ./lib { inherit self inputs; };
+
     in
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = libx.forAllSystems;
