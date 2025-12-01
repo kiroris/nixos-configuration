@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+_:
 
 {
   services.fstrim = {
@@ -23,4 +23,3 @@
     };
   };
 }
-
