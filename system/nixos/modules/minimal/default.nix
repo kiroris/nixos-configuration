@@ -28,7 +28,7 @@ in
       man.generateCaches = mkDefault false;
       nixos.enable = mkDefault false;
     };
-    
+
     environment = {
       # Disable stub-ld, this exists to kill dynamically linked executables, since they cannot work
       # on NixOS, however we know that so we don't need to see the warning
@@ -43,7 +43,7 @@ in
 
     fonts.fontDir.decompressFonts = true;
 
-    programs = { 
+    programs = {
       command-not-found.enable = mkDefault false;
       nano.enable = mkDefault false;
       less.lessopen = null;

@@ -19,12 +19,17 @@ in
   config = mkIf cfg.enable {
     boot.initrd.systemd.enable = true;
 
-    # Remain unshaken. Grant Silence to all that stands before you. Follow the land horizon. 
+    # Remain unshaken. Grant Silence to all that stands before you. Follow the land horizon.
     # environment.memoryAllocator.provider = "mimalloc";
 
     # Realtime
     security.pam.loginLimits = [
-      { domain = "@users"; item = "rtprio"; type = "-"; value = 1; }
+      {
+        domain = "@users";
+        item = "rtprio";
+        type = "-";
+        value = 1;
+      }
     ];
 
     services = {
