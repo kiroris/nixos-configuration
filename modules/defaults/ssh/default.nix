@@ -1,4 +1,4 @@
-{lib, ...}:
+{ lib, ...}:
 let
   inherit (lib) mkOption;
   inherit (lib.types) str listOf;
@@ -8,7 +8,7 @@ in
     ssh = {
       pubKeys = mkOption {
         type = listOf str;
-        default = [];
+        default = [ ];
       };
     };
   };

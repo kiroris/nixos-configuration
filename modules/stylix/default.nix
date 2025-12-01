@@ -14,7 +14,7 @@ let
 
   cfg = config.module.stylix;
 
-  cursorSize = if hostname == "lycoris" then 24else 14;
+  cursorSize = if hostname == "lycoris" then 24 else 14;
 
   themes = {
     nord = {
