@@ -15,7 +15,7 @@ _:
 
     "/" = {
       device = "UUID=140b697a-5633-4e06-8e84-248afa24ce55";
-      fsType = "xfs";
+      fsType = "ext4";
       options = [
         "defaults"
         "noatime"
