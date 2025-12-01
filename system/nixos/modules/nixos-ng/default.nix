@@ -5,7 +5,7 @@
 }:
 
 let
-  inherit (lib) mkEnableOption mkIf mkForce;
+  inherit (lib) mkEnableOption mkIf;
 
   cfg = config.module.nixos-ng;
 in
