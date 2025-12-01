@@ -82,17 +82,17 @@ in
         log-lines = 30;
 
         # let the system decide the number of max jobs
-        max-jobs = "auto";        
+        max-jobs = "auto";
 
         # cgroups yea
         use-cgroups = true;
 
         # automatically optimise symlinks
         auto-optimise-store = true;
-        
+
         # use xdg base directories for all the nix things
         use-xdg-base-directories = true;
-        
+
         # build inside sandboxed environments
         sandbox = true;
 
@@ -135,4 +135,3 @@ in
     };
   };
 }
-

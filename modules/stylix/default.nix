@@ -60,7 +60,7 @@ let
         package = pkgs.material-cursors;
         name = "material_light_cursors";
       };
-      
+
       #icons = {
       #  dark = "oomox-gruvbox-dark";
       #  package = pkgs.gruvbox-dark-icons-gtk;

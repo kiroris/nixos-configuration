@@ -1,4 +1,4 @@
-{ lib, ...}:
+{ lib, ... }:
 let
   inherit (lib) mkOption;
   inherit (lib.types) str listOf;
