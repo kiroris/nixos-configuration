@@ -1,7 +1,9 @@
-{lib, ...}: let
+{lib, ...}:
+let
   inherit (lib) mkOption;
   inherit (lib.types) str;
-in {
+in
+{
   options.module.defaults = {
     network = {
       iface = mkOption {

@@ -3,12 +3,14 @@
   config,
   pkgs,
   ...
-}: let
+}:
+let
   inherit (lib) mkOption;
   inherit (lib.types) enum str;
 
   cfg = config.module.defaults;
-in {
+in
+{
   options.module.defaults = {
     browser = mkOption {
       type = enum [
@@ -20,13 +22,14 @@ in {
       default = "firefox";
     };
 
-    browserCmd = let
-      browserExecs = {
-        firefox = "${pkgs.firefox}/bin/firefox";
-        chromium = "${pkgs.ungoogled-chromium}/bin/chromium";
-        luakit = "${pkgs.luakit}/bin/luakit";
-      };
-    in
+    browserCmd =
+      let
+        browserExecs = {
+          firefox = "${pkgs.firefox}/bin/firefox";
+          chromium = "${pkgs.ungoogled-chromium}/bin/chromium";
+          luakit = "${pkgs.luakit}/bin/luakit";
+        };
+      in
       mkOption {
         type = str;
         default = browserExecs.${cfg.browser};
