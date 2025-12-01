@@ -70,7 +70,7 @@ let
           #home-manager.nixosModules.home-manager
           stylix.nixosModules.stylix
           #impermanence.nixosModules.impermanence
-          disko.nixosModules.disko
+          #disko.nixosModules.disko
           lanzaboote.nixosModules.lanzaboote
           chaotic.nixosModules.default
           sops-nix.nixosModules.sops

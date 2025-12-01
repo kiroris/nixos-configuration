@@ -1,38 +1,25 @@
 _:
 
 {
-  disko.devices = {
-    disk = {
-      main = {
-        type = "disk";
-        device = "/dev/disk/by-id/nvme-Netac_NVMe_SSD_500GB_MAX20230613500G46830";
-        content = {
-          type = "gpt";
-          partitions = {
-            ESP = {
-              type = "EF00";
-              size = "1G";
-              content = {
-                type = "filesystem";
-                format = "vfat";
-                mountpoint = "/boot";
-                mountOptions = [ "umask=0077" ];
-              };
-            };
+  services.fstrim = {
+    enable = true;
+    interval = "weekly";
+  };
 
-            nixos = {
-              type = "8300";
-              size = "100%";
-              content = {
-                type = "filesystem";
-                format = "xfs";
-                mountpoint = "/";
-                mountOptions = [ "noatime" ];
-              };
-            };
-          };
-        };
-      };
+  fileSystems = {
+    "/boot" = {
+      device = "UUID=D395-CC9B";
+      fsType = "vfat";
+      options = [ "umask=0077" ];
+    };
+
+    "/" = {
+      device = "UUID=140b697a-5633-4e06-8e84-248afa24ce55";
+      fsType = "xfs";
+      options = [
+        "defaults"
+        "noatime"
+      ];
     };
   };
 }
