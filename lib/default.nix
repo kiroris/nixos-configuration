@@ -2,7 +2,8 @@
   self,
   inputs,
   ...
-}: let
+}:
+let
   defaultStateVersion = "25.05";
 
   constructors = [
