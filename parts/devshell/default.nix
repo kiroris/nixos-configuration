@@ -11,7 +11,7 @@
         EDITOR = "${pkgs.neovim-unwrapped}/bin/nvim";
 
         shellHook = ''
-          exec fish -C 'alias check="nix flake check --all-systems --extra-experimental-features nix-command --extra-experimental-features flakes"'
+          exec fish -C 'alias check="nix flake check --extra-experimental-features nix-command --extra-experimental-features flakes"'
         '';
 
         packages = with pkgs; [
