@@ -11,8 +11,6 @@ _:
     variables.enable = true;
     xdg.enable = true;
 
-
-
     programs = {
       zsh.enable = true;
     };
