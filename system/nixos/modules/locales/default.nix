@@ -2,9 +2,7 @@
   lib,
   config,
   ...
-}:
-
-let
+}:let
   inherit (lib) mkEnableOption mkIf;
 
   cfg = config.module.locales;
