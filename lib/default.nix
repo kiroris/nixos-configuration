@@ -68,7 +68,7 @@ let
       modules =
         with inputs;
         [
-          #home-manager.nixosModules.home-manager
+          home-manager.nixosModules.home-manager
           stylix.nixosModules.stylix
           #impermanence.nixosModules.impermanence
           #disko.nixosModules.disko
