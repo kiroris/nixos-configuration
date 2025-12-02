@@ -8,11 +8,11 @@
 let
   inherit (lib) mkEnableOption mkIf;
 
-  cfg = config.module.virtualisation;
+  cfg = config.module.virtualization;
 in
 {
   options = {
-    module.virtualisation = {
+    module.virtualization = {
       enable = mkEnableOption "Enables virtualisation";
     };
   };

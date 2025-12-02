@@ -73,6 +73,7 @@ in
   options = {
     module.stylix = {
       enable = mkEnableOption "Enables stylix";
+      #enableReleaseChecks = false; # Enable for debug
 
       useCursor = mkOption {
         type = bool;
