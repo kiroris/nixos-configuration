@@ -1,44 +1,25 @@
 _:
 
 {
-  services = {
-    # discard blocks that are not in use by the filesystem, good for SSDs health
-    fstrim = {
-      enable = true;
-      interval = "weekly";
-    };
+  services.fstrim = {
+    enable = true;
+    interval = "weekly";
   };
 
-  disko.devices = {
-    disk = {
-      main = {
-        device = "/dev/disk/by-id/nvme-Netac_NVMe_SSD_500GB_MAX20230613500G46830";
-        type = "disk";
-        content = {
-          type = "gpt";
-          partitions = {
-            ESP = {
-              type = "EF00";
-              size = "1G";
-              content = {
-                type = "filesystem";
-                format = "vfat";
-                mountpoint = "/boot";
-                mountOptions = [ "umask=0077" ];
-              };
-            };
-            root = {
-              size = "100%";
-              content = {
-                type = "filesystem";
-                format = "ext4";
-                mountpoint = "/";
-                mountOptions = [ "noatime" ];
-              };
-            };
-          };
-        };
-      };
+  fileSystems = {
+    "/boot" = {
+      device = "UUID=D395-CC9B";
+      fsType = "vfat";
+      options = [ "umask=0077" ];
+    };
+
+    "/" = {
+      device = "UUID=140b697a-5633-4e06-8e84-248afa24ce55";
+      fsType = "ext4";
+      options = [
+        "defaults"
+        "noatime"
+      ];
     };
   };
 }

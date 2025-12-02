@@ -31,7 +31,7 @@ _:
       #pihole.enable = false;
       #systemPackages.enable = false;
       #thunar.enable = false;
-      #xdg-portal.enable = false;
+      xdg-portal.enable = true;
       zsh.enable = true;
     };
 

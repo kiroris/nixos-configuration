@@ -13,7 +13,9 @@
     extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
 
     kernelModules = [
-      "kvm-intel"
+      #"kvm-intel"
+      "kvm-amd"
+      "amdgpu"
       "tcp_bbr"
       "tls"
     ];
