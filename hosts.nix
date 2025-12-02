@@ -5,7 +5,7 @@
       platform = "x86_64-linux";
       stateVersion = "25.11";
       isWorkstation = true;
-      wm = "hyprland"; # hyprland / sway
+      wm = "sway"; # hyprland / sway
       theme = "gruvbox"; # gruvbox / nord / biscuit
     };
 

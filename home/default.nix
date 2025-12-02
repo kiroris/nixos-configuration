@@ -68,7 +68,7 @@ in
 
         "${self}/modules"
         "${self}/home/modules"
-        "${self}/home/users/${username}"
+        #"${self}/home/users/${username}"
       ]
       ++ optional userConfigurationPathExist userConfigurationPath
       ++ optional userModulesPathExist userModulesPath;
