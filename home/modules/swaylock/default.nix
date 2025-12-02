@@ -23,13 +23,10 @@ in
       settings = {
 
         ignore-empty-password = true;
+        #indicator-idle-visible = true;
+        indicator-radius = 150;
 
-        #timestr = "%R";
-        #datestr = "%a, %e of %B";
-        #fade-in = 0.5;
-
-
-        no-unlock-indicator = true;
+        #no-unlock-indicator = true;
         hide-keyboard-layout = true;
 
         color = mkDefault "282828";
