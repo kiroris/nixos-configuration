@@ -5,7 +5,7 @@ _:
     binfmt.enable = false;
     bluetooth.enable = true;
     boot.enable = true;
-    lanzaboot.enable = false;
+    lanzaboote.enable = false;
     locales.enable = true;
     minimal.enable = false;
     network.enable = true;
