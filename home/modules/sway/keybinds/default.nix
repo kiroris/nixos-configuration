@@ -67,11 +67,11 @@ in
       modifier = super;
       bindkeysToCode = true;
 
-      assigns = {
-        "2" = [ { app_id = "org.telegram.desktop"; } ];
-        "4" = [ { app_id = "obsidian"; } ];
-        "8" = [ { app_id = "vesktop"; } ];
-      };
+      #assigns = {
+      #  "2" = [ { app_id = "org.telegram.desktop"; } ];
+      #  "4" = [ { app_id = "obsidian"; } ];
+      #  "8" = [ { app_id = "vesktop"; } ];
+      #};
 
       keybindings = {
         # Terminal
@@ -81,7 +81,7 @@ in
         "${super}+q" = "kill";
 
         # PowerMenu
-        "${super}+p" = "exec ${powerMenu}/bin/powerMenu.sh";
+        #"${super}+p" = "exec ${powerMenu}/bin/powerMenu.sh";
 
         # Change focus
         # Vim like
@@ -110,8 +110,8 @@ in
         "${super}+Shift+Right" = "move right";
 
         # Application launcher
-        "${super}+d" = "exec ${appLauncher}";
-        "${super}+c" = "exec ${clipHist}";
+        #"${super}+d" = "exec ${appLauncher}";
+        #"${super}+c" = "exec ${clipHist}";
 
         # Multimedia keys
         "XF86AudioRaiseVolume" = "exec ${audioControl} set-volume @DEFAULT_AUDIO_SINK@ 5%+";
@@ -122,14 +122,14 @@ in
         "XF86MonBrightnessUp" = "exec ${brightnessControl} set +5%";
 
         # Notifications
-        "${super}+n" = "exec ${notificationsApp}";
+        #"${super}+n" = "exec ${notificationsApp}";
 
         # Screenshot
-        "Print" = "exec ${screenshotArea}";
-        "Shift+Print" = "exec ${screenshotScreen}";
+        #"Print" = "exec ${screenshotArea}";
+        #"Shift+Print" = "exec ${screenshotScreen}";
 
         # Reload the configuration file
-        "${super}+Shift+r" = "reload";
+        #"${super}+Shift+r" = "reload";
 
         # Fullscreen mode
         "${super}+f" = "fullscreen";
@@ -141,10 +141,10 @@ in
         "${super}+r" = "mode resize";
 
         # Layouts
-        "${super}+v" = "splitv";
-        "${super}+b" = "splith";
-        "${super}+t" = "layout toggle split tabbed";
-        "${super}+a" = "focus parent";
+        #"${super}+v" = "splitv";
+        #"${super}+b" = "splith";
+        #"${super}+t" = "layout toggle split tabbed";
+        #"${super}+a" = "focus parent";
 
         # Switch to workspace using number row
         "${super}+1" = "${workspace1}";
