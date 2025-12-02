@@ -42,6 +42,28 @@ _:
     };
 
     services = {
+      #adguard-home.enable = false;
+      #bolt.enable = false;
+      #cpu-autofreq.enable = false;
+      #fwupd.enable = false;
+      #greetd.enable = true;
+      #homepage-dashboard.enable = false;
+      #hyprland.enable = false;
+      #irqbalance.enable = false;
+      #journald.enable = false;
+      #netbird.enable = false;
+      #oomd.enable = false;
+      polkit.enable = true;
+      #postgresql.enable = false;
+      #printing.enable = false;
+      #scx.enable = false;
+      #searxng.enable = false;
+      ssh.enable = true;
+      #syncthing.enable = false;
+      #tailscale.enable = false;
+      #tlp.enable = false;
+      #udev.enable = false;
+      #unbound.enable = false;
       zram.enable = true;
     };
 
