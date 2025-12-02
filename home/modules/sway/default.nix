@@ -77,6 +77,8 @@ in
           "type:touchpad" = {
             natural_scroll = "enabled";
             tap = "enabled";
+            #drag = "enabled";
+            #scroll_factor = "0.5";
             click_method = "button_areas";
           };
         };
@@ -89,6 +91,7 @@ in
 
         window = {
           titlebar = false;
+          border = 4;
         };
 
         #startup = [

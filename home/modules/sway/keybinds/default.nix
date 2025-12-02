@@ -129,7 +129,7 @@ in
         "Shift+Print" = "exec ${screenshotScreen}";
 
         # Reload the configuration file
-        #"${super}+Shift+r" = "reload";
+        "${super}+Shift+r" = "reload";
 
         # Fullscreen mode
         "${super}+f" = "fullscreen";
@@ -142,7 +142,7 @@ in
 
         # Layouts
         "${super}+v" = "splitv";
-        "${super}+h" = "splith";
+        "${super}+b" = "splith";
         "${super}+t" = "layout toggle split tabbed";
         "${super}+a" = "focus parent";
 

@@ -6,7 +6,7 @@
       stateVersion = "25.11";
       isWorkstation = true;
       wm = "sway"; # hyprland / sway
-      theme = "nord"; # gruvbox / nord / biscuit
+      theme = "gruvbox"; # gruvbox / nord / biscuit
     };
 
     #lycoris = {

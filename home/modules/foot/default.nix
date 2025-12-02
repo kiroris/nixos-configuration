@@ -30,7 +30,7 @@ in
           resize-delay-ms = 100;
           workers = 16;
           #initial-window-size-chars = "115x24";
-          #pad = "12x21 center";
+          pad = "5x2"; # "12x21 center"
         };
 
         cursor = {
