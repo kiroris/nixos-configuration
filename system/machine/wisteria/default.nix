@@ -50,7 +50,7 @@ _:
       #homepage-dashboard.enable = false;
       #hyprland.enable = false;
       #irqbalance.enable = false;
-      #journald.enable = false;
+      journald.enable = true;
       #netbird.enable = false;
       #oomd.enable = false;
       polkit.enable = true;
