@@ -21,9 +21,6 @@ _:
 
     stylix.enable = true;
 
-
-
-
     programs = {
       dconf.enable = false;
       gaming.enable = false;
@@ -38,13 +35,11 @@ _:
       zsh.enable = true;
     };
 
-
     security = {
       enable = true;
       enableBootOptions = true;
       disableIPV6 = true;
     };
-
 
   };
 
