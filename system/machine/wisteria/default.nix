@@ -46,7 +46,7 @@ _:
       #bolt.enable = false;
       #cpu-autofreq.enable = false;
       #fwupd.enable = false;
-      #greetd.enable = true;
+      #greetd.enable = false;
       #homepage-dashboard.enable = false;
       #hyprland.enable = false;
       #irqbalance.enable = false;
