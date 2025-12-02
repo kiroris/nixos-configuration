@@ -7,7 +7,7 @@
 let
   inherit (lib) mkEnableOption mkIf;
 
-  cfg = config.module.pihole;
+  cfg = config.module.programs.pihole;
 in
 {
   options = {
