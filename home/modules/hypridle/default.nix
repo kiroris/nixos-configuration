@@ -70,26 +70,24 @@ in
         listener =
           [
             {
-              timeout = 300;
+              timeout = 600;
               on-timeout = screenOff;
               on-resume = screenOn;
             }
             {
-              timeout = 600;
+              timeout = 900;
               on-timeout = lockScreen;
               on-resume = "";
             }
-          ]
-          ++ optionals (hostname == "nbox") [
             {
-              timeout = 900;
+              timeout = 3600;
               on-timeout = suspendCmd;
               on-resume = "";
             }
           ]
-          ++ optionals (hostname == "legioner") [
+          ++ optionals (hostname == "lycoris") [
             {
-              timeout = 7200;
+              timeout = 1800;
               on-timeout = suspendCmd;
               on-resume = "";
             }

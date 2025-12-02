@@ -29,28 +29,28 @@ in
           term = "foot";
           resize-delay-ms = 100;
           workers = 16;
-          initial-window-size-chars = "115x24";
-          pad = "12x21 center";
+          #initial-window-size-chars = "115x24";
+          #pad = "12x21 center";
         };
 
         cursor = {
-          style = "beam";
-          beam-thickness = 2;
+          style = "block"; # beam - I
+          #beam-thickness = 2;
         };
 
         mouse = {
           hide-when-typing = "no";
         };
 
-        key-bindings = {
-          clipboard-copy = "Control+c XF86Copy";
-          clipboard-paste = "Control+v XF86Paste";
-          noop = "Mod4+space";
-        };
+        #key-bindings = {
+        #  clipboard-copy = "Control+c XF86Copy";
+        #  clipboard-paste = "Control+v XF86Paste";
+        #  noop = "Mod4+space";
+        #};
 
-        text-bindings = {
-          "\\x03" = "Control+Shift+c Control+Shift+C";
-        };
+        #text-bindings = {
+        #  "\\x03" = "Control+Shift+c Control+Shift+C";
+        #};
       };
     };
   };

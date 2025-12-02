@@ -125,8 +125,8 @@ in
         #"${super}+n" = "exec ${notificationsApp}";
 
         # Screenshot
-        #"Print" = "exec ${screenshotArea}";
-        #"Shift+Print" = "exec ${screenshotScreen}";
+        "Print" = "exec ${screenshotArea}";
+        "Shift+Print" = "exec ${screenshotScreen}";
 
         # Reload the configuration file
         #"${super}+Shift+r" = "reload";
@@ -141,10 +141,10 @@ in
         "${super}+r" = "mode resize";
 
         # Layouts
-        #"${super}+v" = "splitv";
-        #"${super}+b" = "splith";
-        #"${super}+t" = "layout toggle split tabbed";
-        #"${super}+a" = "focus parent";
+        "${super}+v" = "splitv";
+        "${super}+h" = "splith";
+        "${super}+t" = "layout toggle split tabbed";
+        "${super}+a" = "focus parent";
 
         # Switch to workspace using number row
         "${super}+1" = "${workspace1}";
