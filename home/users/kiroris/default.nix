@@ -23,7 +23,7 @@
     #hyprlock.enable = hyprlandEnable && isWorkstation;
 
     sway.enable = swayEnable && isWorkstation;
-    swaylock.enable = swayEnable && isWorkstation;
+    #swaylock.enable = swayEnable && isWorkstation;
 
     #hypridle.enable = wmEnable && isWorkstation;
     #foot.enable = wmEnable && isWorkstation;
@@ -31,7 +31,7 @@
     #wofi.enable = wmEnable && isWorkstation;
     #swaync.enable = wmEnable && isWorkstation;
 
-
+    foot.enable = wmEnable && isWorkstation;
 
 
 

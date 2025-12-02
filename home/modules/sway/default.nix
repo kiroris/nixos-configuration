@@ -58,7 +58,7 @@ in
 
       config = {
         focus.mouseWarping = "container";
-        workspaceAutoBackAndForth = true;
+        workspaceAutoBackAndForth = false; # true
 
         input = {
           "type:pointer" = {
@@ -91,12 +91,12 @@ in
           titlebar = false;
         };
 
-        startup = [
-          { command = "${pkgs.wl-clipboard}/bin/wl-paste --type text --watch cliphist store"; }
-          { command = "${pkgs.wl-clipboard}/bin/wl-paste --type image --watch cliphist store"; }
-          { command = "${pkgs.sway}/bin/swaymsg 'workspace 1; exec ${browser}'"; }
-          { command = "${pkgs.sway}/bin/swaymsg 'workspace 5; exec ${terminal}'"; }
-        ];
+        #startup = [
+        #  { command = "${pkgs.wl-clipboard}/bin/wl-paste --type text --watch cliphist store"; }
+        #  { command = "${pkgs.wl-clipboard}/bin/wl-paste --type image --watch cliphist store"; }
+        #  { command = "${pkgs.sway}/bin/swaymsg 'workspace 1; exec ${browser}'"; }
+        #  { command = "${pkgs.sway}/bin/swaymsg 'workspace 5; exec ${terminal}'"; }
+        #];
       };
     };
   };
