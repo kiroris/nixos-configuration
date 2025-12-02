@@ -68,10 +68,10 @@ in
 
         "${self}/modules"
         "${self}/home/modules"
-        "${self}/home/${username}"
-      ];
-      #++ optional userConfigurationPathExist userConfigurationPath;
-      #++ optional userModulesPathExist userModulesPath;
+        "${self}/home/users/${username}"
+      ]
+      ++ optional userConfigurationPathExist userConfigurationPath
+      ++ optional userModulesPathExist userModulesPath;
 
       home = {
         inherit username;
