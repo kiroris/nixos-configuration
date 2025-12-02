@@ -73,7 +73,6 @@ in
   options = {
     module.stylix = {
       enable = mkEnableOption "Enables stylix";
-      #enableReleaseChecks = false; # Enable for debug
 
       useCursor = mkOption {
         type = bool;
@@ -86,6 +85,7 @@ in
   config = mkIf cfg.enable {
     stylix = {
       enable = true;
+      enableReleaseChecks = false; # Enable for debug
       image = themes.${theme}.wallpaper;
       autoEnable = true;
       polarity = "dark";
