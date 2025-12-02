@@ -85,7 +85,7 @@ in
   config = mkIf cfg.enable {
     stylix = {
       enable = true;
-      enableReleaseChecks = false; # Enable for debug
+      #enableReleaseChecks = false; # Enable for debug
       image = themes.${theme}.wallpaper;
       autoEnable = true;
       polarity = "dark";
