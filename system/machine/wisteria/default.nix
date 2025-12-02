@@ -42,7 +42,7 @@ _:
     };
 
     services = {
-      zram.enable = true
+      zram.enable = true;
     };
 
   };
