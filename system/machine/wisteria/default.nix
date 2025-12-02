@@ -2,22 +2,22 @@ _:
 
 {
   module = {
-    #binfmt.enable = false;
+    binfmt.enable = false;
     bluetooth.enable = true;
     boot.enable = true;
-    #lanzaboot.enable = false;
+    lanzaboot.enable = false;
     locales.enable = true;
-    #minimal.enable = false;
+    minimal.enable = false;
     network.enable = true;
-    #nixos-ng.enable = false;
-    #plymouth.enable = false;
+    nixos-ng.enable = false;
+    plymouth.enable = false;
     sound.enable = true;
     timedate.enable = true;
     users.enable = true;
     variables.enable = true;
-    #virtualization.enable = false;
+    virtualization.enable = false;
     xdg.enable = true;
-    #zapret.enable = false;
+    zapret.enable = false;
 
     stylix.enable = true;
 
