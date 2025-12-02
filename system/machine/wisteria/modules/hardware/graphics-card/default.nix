@@ -4,7 +4,9 @@
 }:
 
 {
-  services.xserver.videoDrivers = [ "nvidia" /*"amdgpu"*/ ];
+  services.xserver.videoDrivers = [
+    "nvidia" # "amdgpu"
+  ];
 
   #nixpkgs.config.cudaSupport = true;
 
