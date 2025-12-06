@@ -8,7 +8,7 @@ let
   defaultStateVersion = "25.05";
 
   constructors = [
-    "${self}/home"
+    #"${self}/home"
     "${self}/system"
   ];
 
@@ -83,8 +83,5 @@ in
 {
   forAllSystems = inputs.nixpkgs.lib.systems.flakeExposed;
 
-  # LEGACY REMNANTS: This function just add mkHost or mkHostDarwin before hosts attrset
-  # ex: pcbox = { username = "test"; stateVersion = "24.11"; }; ->
-  # pcbox = mkHost { username = "test"; stateVersion = "24.11"; };
   genNixos = builtins.mapAttrs mkHost;
 }
