@@ -1,7 +1,8 @@
-{
-  pkgs,
-  ...
-}:
+#{
+#  pkgs,
+#  ...
+#}:
+_:
 
 {
   services.xserver.videoDrivers = [
