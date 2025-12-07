@@ -8,7 +8,7 @@ let
   defaultStateVersion = "25.05";
 
   constructors = [
-    #"${self}/home"
+    "${self}/home"
     "${self}/system"
   ];
 

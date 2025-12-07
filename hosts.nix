@@ -4,8 +4,8 @@
       username = "kiroris";
       platform = "x86_64-linux";
       stateVersion = "25.11";
-      isWorkstation = false;
-      wm = ""; # hyprland / sway
+      isWorkstation = true;
+      wm = "sway"; # hyprland / sway
       theme = "nord"; # gruvbox / nord / biscuit
     };
 

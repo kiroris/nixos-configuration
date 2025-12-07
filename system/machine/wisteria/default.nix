@@ -2,14 +2,14 @@ _:
 
 {
   module = {
-    #binfmt.enable = false;
+    binfmt.enable = true;
     bluetooth.enable = true;
     boot.enable = true;
     #lanzaboote.enable = false;
     locales.enable = true;
     #minimal.enable = false;
     network.enable = true;
-    #nixos-ng.enable = false;
+    #nixos-ng.enable = true;
     #plymouth.enable = false;
     sound.enable = true;
     timedate.enable = true;
@@ -20,6 +20,7 @@ _:
     #zapret.enable = false;
 
     stylix.enable = true;
+    nix-config.enable = true;
 
     programs = {
       #dconf.enable = false;
@@ -31,7 +32,7 @@ _:
       #pihole.enable = false;
       #systemPackages.enable = false;
       #thunar.enable = false;
-      xdg-portal.enable = true;
+      #xdg-portal.enable = true;
       zsh.enable = true;
     };
 

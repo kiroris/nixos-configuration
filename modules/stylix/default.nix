@@ -49,7 +49,7 @@ let
     };
 
     gruvbox = {
-      scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-light-medium.yaml";
+      scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-medium.yaml";
       wallpaper = "${self}/assets/wallpapers/windowsxp.jpeg";
 
       font = {

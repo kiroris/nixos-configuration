@@ -23,14 +23,14 @@ in
     # environment.memoryAllocator.provider = "mimalloc";
 
     # Realtime
-    security.pam.loginLimits = [
-      {
-        domain = "@users";
-        item = "rtprio";
-        type = "-";
-        value = 1;
-      }
-    ];
+    #security.pam.loginLimits = [
+    #  {
+    #    domain = "@users";
+    #    item = "rtprio";
+    #    type = "-";
+    #    value = 1;
+    #  }
+    #];
 
     services = {
       # userborn.enable     = true;

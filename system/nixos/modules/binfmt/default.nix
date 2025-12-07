@@ -21,9 +21,9 @@ in
 
       # Our archs that we want to emulate
       registrations = {
-        aarch64-linux.interpreter = "${pkgs.qemu}/bin/qemu-aarch64";
-        i686-linux.interpreter = "${pkgs.qemu}/bin/qemu-i686";
-        x86_64-linux.interpreter = "${pkgs.box64}/bin/box64";
+        #aarch64-linux.interpreter = "${pkgs.qemu}/bin/qemu-aarch64";
+        #i686-linux.interpreter = "${pkgs.qemu}/bin/qemu-i686";
+        #x86_64-linux.interpreter = "${pkgs.box64}/bin/box64";
 
         windows = {
           interpreter = "${pkgs.wine}/bin/wine";
