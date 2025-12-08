@@ -5,34 +5,34 @@ _:
     binfmt.enable = true;
     bluetooth.enable = true;
     boot.enable = true;
-    #lanzaboote.enable = false;
+    #lanzaboote.enable = false; # not need
     locales.enable = true;
-    #minimal.enable = false;
+    minimal.enable = true;
     network.enable = true;
-    #nixos-ng.enable = true;
-    #plymouth.enable = false;
+    #nixos-ng.enable = false; # kill my system whathell
+    plymouth.enable = true;
     sound.enable = true;
     timedate.enable = true;
     users.enable = true;
     variables.enable = true;
-    #virtualization.enable = false;
+    #virtualization.enable = false; # not need
     xdg.enable = true;
-    #zapret.enable = false;
+    zapret.enable = false;
 
     stylix.enable = true;
-    nix-config.enable = true;
+    #nix-config.enable = true;
 
     programs = {
       #dconf.enable = false;
-      #gaming.enable = false;
+      #gaming.enable = true;
       #gnupg.enable = false;
-      #hm.enable = false;
-      #mtr.enable = false;
+      hm.enable = true;
+      #mtr.enable = false; # not need
       nh.enable = true;
-      #pihole.enable = false;
-      #systemPackages.enable = false;
-      #thunar.enable = false;
-      #xdg-portal.enable = true;
+      #pihole.enable = false; # not need
+      systemPackages.enable = true;
+      thunar.enable = true;
+      xdg-portal.enable = true;
       zsh.enable = true;
     };
 

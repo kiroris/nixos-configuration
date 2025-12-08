@@ -11,21 +11,19 @@ let
 in
 {
   options = {
-    module.lanzaboote = {
-      enable = mkEnableOption "Enables lanzaboote";
-    };
+    module.lanzaboote.enable = mkEnableOption "Enable module lanzaboote";
   };
 
   config = mkIf cfg.enable {
     # Bootloader settings
-    boot = {
-      loader.systemd-boot.enable = mkForce false;
-      loader.efi.canTouchEfiVariables = true;
+    boot.loader = {
+      systemd-boot.enable = mkForce false;
+      efi.canTouchEfiVariables = true;
+    };
 
-      lanzaboote = {
-        enable = true;
-        pkiBundle = "/etc/secureboot";
-      };
+    boot.lanzaboote = {
+      enable    = true;
+      pkiBundle = "/etc/secureboot";
     };
   };
 }

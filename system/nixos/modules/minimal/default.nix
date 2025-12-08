@@ -1,6 +1,6 @@
 {
-  lib,
   config,
+  lib,
   ...
 }:
 
@@ -11,9 +11,7 @@ let
 in
 {
   options = {
-    module.minimal = {
-      enable = mkEnableOption "Debloated size";
-    };
+    module.minimal.enable = mkEnableOption "Enable module minimal";
   };
 
   config = mkIf cfg.enable {
@@ -26,7 +24,7 @@ in
       man.man-db.enable = mkDefault false;
       man.mandoc.enable = mkDefault false;
       man.generateCaches = mkDefault false;
-      nixos.enable = mkDefault false;
+      # nixos.enable = mkDefault false;
     };
 
     environment = {
@@ -34,7 +32,7 @@ in
       # on NixOS, however we know that so we don't need to see the warning
       stub-ld.enable = false;
 
-      # Disable all packages installed by default, i prefer my own packages
+      # Disable all packages installed by default, I prefer my own packages
       # this list normally includes things like perl
       defaultPackages = lib.mkForce [ ];
     };

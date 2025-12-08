@@ -11,9 +11,7 @@ let
 in
 {
   options = {
-    module.xdg = {
-      enable = mkEnableOption "Enables xdg";
-    };
+    module.xdg.enable = mkEnableOption "Enable module xdg";
   };
 
   config = mkIf cfg.enable {

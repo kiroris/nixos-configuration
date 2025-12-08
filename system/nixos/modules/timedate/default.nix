@@ -11,7 +11,7 @@ let
 in
 {
   options = {
-    module.timedate.enable = mkEnableOption "Enables timedate";
+   module.timedate.enable = mkEnableOption "Enable module timedate";
   };
 
   config = mkIf cfg.enable {

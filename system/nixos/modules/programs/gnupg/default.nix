@@ -11,7 +11,7 @@ let
 in
 {
   options = {
-    module.programs.gnupg.enable = mkEnableOption "Enables GnuPG";
+    module.programs.gnupg.enable = mkEnableOption "Enable module GnuPG";
   };
 
   config = mkIf cfg.enable {

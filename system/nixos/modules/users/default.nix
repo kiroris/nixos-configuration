@@ -1,8 +1,8 @@
 {
-  self,
-  pkgs,
   lib,
   config,
+  pkgs,
+  self,
   username,
   ...
 }:
@@ -14,7 +14,7 @@ let
 in
 {
   options = {
-    module.users.enable = mkEnableOption "Enables users";
+    module.users.enable = mkEnableOption "Enable module users";
   };
 
   config = mkIf cfg.enable {

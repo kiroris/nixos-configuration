@@ -12,17 +12,17 @@ let
 in
 {
   options = {
-    module.programs.thunar.enable = mkEnableOption "Enable Thunar file manager";
+    module.programs.thunar.enable = mkEnableOption "Enable module Thunar";
   };
 
   config = mkIf cfg.enable {
     programs.thunar.enable = true;
     services.tumbler.enable = true; # Thumbnail support for images
 
-    services.gvfs = {
-      enable = true;
-      package = mkForce pkgs.gnome.gvfs;
-    };
+    #services.gvfs = {
+    #  enable = true;
+    #  package = mkForce pkgs.gnome.gvfs;
+    #};
 
     environment.systemPackages = with pkgs; [ file-roller ];
 

@@ -11,21 +11,24 @@ let
 in
 {
   options = {
-    module.boot = {
-      enable = mkEnableOption "Enables Bootloader";
-    };
+    module.boot.enable = mkEnableOption "Enable module boot";
   };
 
   config = mkIf cfg.enable {
     boot.loader = {
       efi.canTouchEfiVariables = true;
+
       systemd-boot = {
         enable = true;
-        # Prevent "too many" configuration from showing up on the boot menu
-        #configurationLimit = 15;
+
+        # Prevent "too many" configurations from showing up on the boot menu
+        # configurationLimit = 15;
+
         # The default is "keep"
         consoleMode = "max";
-        # Fix a security hole. See desc in nixpkgs/nixos/modules/system/boot/loader/systemd-boot/systemd-boot.nix
+
+        # Fix a security hole. See description in
+        # nixpkgs/nixos/modules/system/boot/loader/systemd-boot/systemd-boot.nix
         editor = false;
       };
     };

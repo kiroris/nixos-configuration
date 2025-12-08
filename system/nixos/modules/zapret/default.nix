@@ -14,7 +14,7 @@ in
 {
   options = {
     module.zapret = {
-      enable = mkEnableOption "Enables zapret";
+      enable = mkEnableOption "Enable module zapret";
 
       wan = mkOption {
         type = str;

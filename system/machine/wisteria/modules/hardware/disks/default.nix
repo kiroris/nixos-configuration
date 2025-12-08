@@ -8,13 +8,13 @@ _:
 
   fileSystems = {
     "/boot" = {
-      device = "UUID=D395-CC9B";
+      device = "UUID=0D8D-4BEA";
       fsType = "vfat";
       options = [ "umask=0077" ];
     };
 
     "/" = {
-      device = "UUID=140b697a-5633-4e06-8e84-248afa24ce55";
+      device = "UUID=75acef4c-c3aa-4062-aa21-2d6826109e23";
       fsType = "ext4";
       options = [
         "defaults"

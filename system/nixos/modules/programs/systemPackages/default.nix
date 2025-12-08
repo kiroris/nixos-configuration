@@ -1,7 +1,7 @@
 {
-  pkgs,
   lib,
   config,
+  pkgs,
   isWorkstation,
   ...
 }:
@@ -14,7 +14,7 @@ let
 in
 {
   options = {
-    module.programs.systemPackages.enable = mkEnableOption "Enable System Software";
+    module.programs.systemPackages.enable = mkEnableOption "Enable module System Software";
   };
 
   config = mkIf cfg.enable {
@@ -45,7 +45,7 @@ in
         waypipe
 
         # Hardware utils
-        glxinfo
+        mesa-demos
         pciutils
         usbutils
         powertop
@@ -72,7 +72,7 @@ in
       ]
       ++ optionals isWorkstation [
         # Hardware
-        microcodeIntel
+        microcode-intel
         libGL
 
         # Hardware utils

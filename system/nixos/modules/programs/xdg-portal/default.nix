@@ -1,7 +1,7 @@
 {
-  pkgs,
   lib,
   config,
+  pkgs,
   wm,
   ...
 }:
@@ -13,7 +13,7 @@ let
 in
 {
   options = {
-    module.programs.xdg-portal.enable = mkEnableOption "Enable xdg-portal";
+    module.programs.xdg-portal.enable = mkEnableOption "Enable module xdg-portal";
   };
 
   config = mkIf cfg.enable {

@@ -1,7 +1,7 @@
 {
   lib,
-  pkgs,
   config,
+  pkgs,
   ...
 }:
 
@@ -12,14 +12,13 @@ let
 in
 {
   options = {
-    module.plymouth = {
-      enable = mkEnableOption "Enables plymouth";
-    };
+    module.plymouth.enable = mkEnableOption "Enable module plymouth";
   };
+
   config = mkIf cfg.enable {
     boot.plymouth = {
       enable = true;
-      theme = "rings";
+      theme = lib.mkForce "rings";
       themePackages = with pkgs; [
         # By default we would install all themes
         (adi1090x-plymouth-themes.override {

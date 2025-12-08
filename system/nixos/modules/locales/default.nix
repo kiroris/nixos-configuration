@@ -11,7 +11,7 @@ let
 in
 {
   options = {
-    module.locales.enable = mkEnableOption "Enables locales";
+    module.locales.enable = mkEnableOption "Enable module locales";
   };
 
   config = mkIf cfg.enable {

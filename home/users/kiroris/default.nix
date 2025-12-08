@@ -31,7 +31,7 @@
     #wofi.enable = wmEnable && isWorkstation;
     #swaync.enable = wmEnable && isWorkstation;
 
-
+    git.enable = true;
 
 
 
