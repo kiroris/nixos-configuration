@@ -29,8 +29,6 @@ let
   userConfigurationPathExist = builtins.pathExists userConfigurationPath;
   userModulesPath = "${self}/home/users/${username}/modules";
   userModulesPathExist = builtins.pathExists userModulesPath;
-  # sshModulePath = "${self}/home/modules/ssh";
-  # sshModuleExistPath = builtins.pathExists sshModulePath;
 in
 {
   home-manager = {
@@ -68,7 +66,6 @@ in
 
         "${self}/modules"
         "${self}/home/modules"
-        #"${self}/home/users/${username}"
       ]
       ++ optional userConfigurationPathExist userConfigurationPath
       ++ optional userModulesPathExist userModulesPath;

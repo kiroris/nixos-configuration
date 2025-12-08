@@ -66,7 +66,6 @@ _:
       #unbound
       zram.enable = true;
     };
-
   };
 
   nix.settings.trusted-users = [

@@ -11,9 +11,7 @@ let
 in
 {
   options = {
-    module.services.unbound = {
-      enable = mkEnableOption "Enables unbound";
-    };
+    module.services.unbound.enable = mkEnableOption "Enables unbound";
   };
 
   config = mkIf cfg.enable {
