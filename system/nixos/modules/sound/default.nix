@@ -11,7 +11,7 @@ let
 in
 {
   options = {
-    module.sound.enable = mkEnableOption "Enable module sound";
+    module.sound.enable = mkEnableOption "Enables sound in your system";
   };
 
   config = mkIf cfg.enable {

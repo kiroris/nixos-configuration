@@ -12,7 +12,7 @@ let
 in
 {
   options = {
-    module.programs.thunar.enable = mkEnableOption "Enable module Thunar";
+    module.programs.thunar.enable = mkEnableOption "Enable Thunar file manager";
   };
 
   config = mkIf cfg.enable {

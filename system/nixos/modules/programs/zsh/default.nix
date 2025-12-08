@@ -11,7 +11,7 @@ let
 in
 {
   options = {
-    module.programs.zsh.enable = mkEnableOption "Enable module zsh";
+    module.programs.zsh.enable = mkEnableOption "Enable zsh";
   };
 
   config = mkIf cfg.enable {

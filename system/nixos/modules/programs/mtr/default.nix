@@ -11,7 +11,7 @@ let
 in
 {
   options = {
-    module.programs.mtr.enable = mkEnableOption "Enable module mtr";
+    module.programs.mtr.enable = mkEnableOption "Enable mtr";
   };
 
   config = mkIf cfg.enable {

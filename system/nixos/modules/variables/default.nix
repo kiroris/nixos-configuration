@@ -11,7 +11,7 @@ let
 in
 {
   options = {
-    module.variables.enable = mkEnableOption "Enable module variables";
+    module.variables.enable = mkEnableOption "Enables variables";
   };
 
   config = mkIf cfg.enable {

@@ -14,7 +14,7 @@ let
 in
 {
   options = {
-    module.programs.systemPackages.enable = mkEnableOption "Enable module System Software";
+    module.programs.systemPackages.enable = mkEnableOption "Enable System Software";
   };
 
   config = mkIf cfg.enable {
@@ -72,7 +72,8 @@ in
       ]
       ++ optionals isWorkstation [
         # Hardware
-        microcode-intel
+        #microcode-intel
+        microcode-amd
         libGL
 
         # Hardware utils

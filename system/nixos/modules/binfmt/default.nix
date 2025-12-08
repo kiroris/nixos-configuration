@@ -12,7 +12,7 @@ let
 in
 {
   options = {
-    module.binfmt.enable = mkEnableOption "Enable module binfmt";
+    module.binfmt.enable = mkEnableOption "Enable binfmt";
   };
 
   config = mkIf cfg.enable {

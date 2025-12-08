@@ -12,7 +12,7 @@ let
 in
 {
   options = {
-    module.programs.gaming.enable = mkEnableOption "Enable module gaming";
+    module.programs.gaming.enable = mkEnableOption "Enables things needed for gaming";
   };
 
   config = mkIf cfg.enable {

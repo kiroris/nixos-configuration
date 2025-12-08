@@ -11,7 +11,7 @@ let
 in
 {
   options = {
-    module.programs.pihole.enable = mkEnableOption "Enable module pihole";
+    module.programs.pihole.enable = mkEnableOption "Enables pihole";
   };
 
   config = mkIf cfg.enable {

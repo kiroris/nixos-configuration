@@ -12,7 +12,7 @@ let
 in
 {
   options = {
-    module.virtualization.enable = mkEnableOption "Enable module virtualisation";
+    module.virtualization.enable = mkEnableOption "Enables virtualisation";
   };
 
   config = mkIf cfg.enable {

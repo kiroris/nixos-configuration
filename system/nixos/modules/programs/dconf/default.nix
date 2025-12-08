@@ -11,7 +11,7 @@ let
 in
 {
   options = {
-    module.programs.dconf.enable = mkEnableOption "Enable module dconf";
+    module.programs.dconf.enable = mkEnableOption "Enabl dconf";
   };
 
   config = mkIf cfg.enable {

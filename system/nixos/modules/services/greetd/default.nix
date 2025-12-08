@@ -1,7 +1,7 @@
 {
-  pkgs,
   lib,
   config,
+  pkgs,
   username,
   inputs,
   wm,
@@ -22,9 +22,7 @@ let
 in
 {
   options = {
-    module.services.greetd = {
-      enable = mkEnableOption "Enable greetd";
-    };
+    module.services.greetd.enable = mkEnableOption "Enable greetd";
   };
 
   config = mkIf cfg.enable {
@@ -43,6 +41,7 @@ in
 
     services.greetd = {
       enable = true;
+      vt = 7;
 
       settings = {
         default_session = {

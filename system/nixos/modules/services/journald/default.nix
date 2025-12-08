@@ -11,7 +11,7 @@ let
 in
 {
   options = {
-    module.services.journald.enable = mkEnableOption "journald tuning";
+    module.services.journald.enable = mkEnableOption "Journald tuning";
   };
 
   config = mkIf cfg.enable {

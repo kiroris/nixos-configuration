@@ -11,7 +11,7 @@ let
 in
 {
   options = {
-    module.boot.enable = mkEnableOption "Enable module boot";
+    module.boot.enable = mkEnableOption "Enables bootloader";
   };
 
   config = mkIf cfg.enable {

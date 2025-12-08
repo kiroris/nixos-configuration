@@ -11,7 +11,7 @@ let
 in
 {
   options = {
-    module.lanzaboote.enable = mkEnableOption "Enable module lanzaboote";
+    module.lanzaboote.enable = mkEnableOption "Enables lanzaboote";
   };
 
   config = mkIf cfg.enable {

@@ -12,9 +12,7 @@ let
 in
 {
   options = {
-    module.services.netbird = {
-      enable = mkEnableOption "Enables netbird";
-    };
+    module.services.netbird.enable = mkEnableOption "Enables netbird";
   };
 
   config = mkIf cfg.enable {

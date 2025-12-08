@@ -13,7 +13,7 @@ let
 in
 {
   options = {
-    module.programs.xdg-portal.enable = mkEnableOption "Enable module xdg-portal";
+    module.programs.xdg-portal.enable = mkEnableOption "Enable xdg-portal";
   };
 
   config = mkIf cfg.enable {

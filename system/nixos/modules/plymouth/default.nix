@@ -12,7 +12,7 @@ let
 in
 {
   options = {
-    module.plymouth.enable = mkEnableOption "Enable module plymouth";
+    module.plymouth.enable = mkEnableOption "Enables plymouth";
   };
 
   config = mkIf cfg.enable {

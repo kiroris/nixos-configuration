@@ -11,7 +11,7 @@ let
 in
 {
   options = {
-    module.minimal.enable = mkEnableOption "Enable module minimal";
+    module.minimal.enable = mkEnableOption "Debloated size";
   };
 
   config = mkIf cfg.enable {

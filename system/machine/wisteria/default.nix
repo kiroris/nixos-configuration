@@ -5,33 +5,33 @@ _:
     binfmt.enable = true;
     bluetooth.enable = true;
     boot.enable = true;
-    #lanzaboote.enable = false; # not need
+    #lanzaboote
     locales.enable = true;
     minimal.enable = true;
     network.enable = true;
-    #nixos-ng.enable = false; # kill my system whathell
+    #nixos-ng - kill my system whathell??
     plymouth.enable = true;
     sound.enable = true;
     timedate.enable = true;
     users.enable = true;
     variables.enable = true;
-    #virtualization.enable = false; # not need
+    #virtualization
     xdg.enable = true;
-    zapret.enable = false;
+    #zapret
 
     stylix.enable = true;
-    #nix-config.enable = true;
 
     programs = {
-      #dconf.enable = false;
+      #dconf
       #gaming.enable = true;
-      #gnupg.enable = false;
+      #gnupg
       hm.enable = true;
-      #mtr.enable = false; # not need
+      kdeconnect.enable = true;
+      #mtr
       nh.enable = true;
-      #pihole.enable = false; # not need
+      #pihole
       systemPackages.enable = true;
-      thunar.enable = true;
+      #thunar
       xdg-portal.enable = true;
       zsh.enable = true;
     };
@@ -42,29 +42,28 @@ _:
       disableIPV6 = true;
     };
 
-    services = {
-      #adguard-home.enable = false;
-      #bolt.enable = false;
-      #cpu-autofreq.enable = false;
-      #fwupd.enable = false;
-      #greetd.enable = false;
-      #homepage-dashboard.enable = false;
+    services = { # normal check only that enabled
+      #adguard-home
+      #bolt
+      #cpu-autofreq
+      #fwupd
+      #greetd.enable = false; # not want
       #hyprland.enable = false;
-      #irqbalance.enable = false;
+      irqbalance.enable = true;
       journald.enable = true;
-      #netbird.enable = false;
-      #oomd.enable = false;
+      #netbird
+      oomd.enable = true;
       polkit.enable = true;
-      #postgresql.enable = false;
-      #printing.enable = false;
-      #scx.enable = false;
-      #searxng.enable = false;
+      #postgresql
+      #printing
+      #scx
+      #searxng
       ssh.enable = true;
-      #syncthing.enable = false;
-      #tailscale.enable = false;
-      #tlp.enable = false;
-      #udev.enable = false;
-      #unbound.enable = false;
+      #syncthing
+      #tailscale
+      #tlp
+      #udev
+      #unbound
       zram.enable = true;
     };
 

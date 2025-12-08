@@ -12,7 +12,7 @@ let
 in
 {
   options = {
-    module.programs.hm.enable = mkEnableOption "Enable module Home Manager";
+    module.programs.hm.enable = mkEnableOption "Enable Home Manager";
   };
 
   config = mkIf cfg.enable {
