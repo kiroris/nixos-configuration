@@ -2,14 +2,11 @@
   lib,
   config,
   ...
-}:
-
-let
+}: let
   inherit (lib) mkEnableOption mkIf mkDefault;
 
   cfg = config.module.swaylock;
-in
-{
+in {
   options = {
     module.swaylock = {
       enable = mkEnableOption "Enable swaylock";
@@ -21,7 +18,6 @@ in
       enable = true;
 
       settings = {
-
         ignore-empty-password = true;
         #indicator-idle-visible = true;
         indicator-radius = 150;

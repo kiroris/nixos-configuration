@@ -15,27 +15,27 @@
   wmEnable ? false,
   allDirs,
   ...
-}:
-
-let
+}: let
   inherit (pkgs.stdenv) isLinux;
   inherit (lib) optional;
 
   stateVersion = hmStateVersion;
   isRoot = username == "root";
-  homeDirectory = if isRoot then "/root" else "/home/${username}";
+  homeDirectory =
+    if isRoot
+    then "/root"
+    else "/home/${username}";
   userConfigurationPath = "${self}/home/users/${username}";
   userConfigurationPathExist = builtins.pathExists userConfigurationPath;
   userModulesPath = "${self}/home/users/${username}/modules";
   userModulesPathExist = builtins.pathExists userModulesPath;
-in
-{
+in {
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension =
       "backup-"
-      + pkgs.lib.readFile "${pkgs.runCommand "timestamp" { } "echo -n `date '+%Y%m%d%H%M%S'` > $out"}";
+      + pkgs.lib.readFile "${pkgs.runCommand "timestamp" {} "echo -n `date '+%Y%m%d%H%M%S'` > $out"}";
 
     extraSpecialArgs = {
       inherit
@@ -57,17 +57,18 @@ in
     };
 
     users.${username} = {
-      imports = [
-        inputs.impermanence.nixosModules.home-manager.impermanence
-        inputs.sops-nix.homeManagerModules.sops
-        inputs.nur.modules.homeManager.default
-        inputs.nvf.homeManagerModules.default
+      imports =
+        [
+          inputs.impermanence.nixosModules.home-manager.impermanence
+          inputs.sops-nix.homeManagerModules.sops
+          inputs.nur.modules.homeManager.default
+          inputs.nvf.homeManagerModules.default
 
-        "${self}/modules"
-        "${self}/home/modules"
-      ]
-      ++ optional userConfigurationPathExist userConfigurationPath
-      ++ optional userModulesPathExist userModulesPath;
+          "${self}/modules"
+          "${self}/home/modules"
+        ]
+        ++ optional userConfigurationPathExist userConfigurationPath
+        ++ optional userModulesPathExist userModulesPath;
 
       home = {
         inherit username;

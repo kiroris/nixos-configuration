@@ -4,13 +4,9 @@
   pkgs,
   ...
 }:
-
-with lib;
-
-let
+with lib; let
   cfg = config.module.mpv;
-in
-{
+in {
   options = {
     module.mpv.enable = mkEnableOption "Enables mpv";
   };

@@ -1,6 +1,4 @@
-_:
-
-{
+_: {
   networking = {
     nameservers = [
       "8.8.8.8"

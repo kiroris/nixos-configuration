@@ -3,14 +3,11 @@
   config,
   pkgs,
   ...
-}:
-
-let
+}: let
   inherit (lib) mkEnableOption mkIf;
 
   cfg = config.module.obs-studio;
-in
-{
+in {
   options = {
     module.obs-studio.enable = mkEnableOption "Enables OBS";
   };

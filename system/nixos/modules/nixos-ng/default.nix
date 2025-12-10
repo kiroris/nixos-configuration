@@ -2,14 +2,11 @@
   lib,
   config,
   ...
-}:
-
-let
+}: let
   inherit (lib) mkEnableOption mkIf;
 
   cfg = config.module.nixos-ng;
-in
-{
+in {
   options = {
     module.nixos-ng = {
       enable = mkEnableOption "Enables nixos-ng";
@@ -48,10 +45,10 @@ in
       # WARNING: do not enable this if your not confident in your ability to fix it
       # it is a royal pain and is not worth half the effor it takes to fix it
       /*
-        etc.overlay = {
-          enable = true;
-          mutable = false;
-        };
+      etc.overlay = {
+        enable = true;
+        mutable = false;
+      };
       */
     };
   };

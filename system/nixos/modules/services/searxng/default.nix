@@ -2,14 +2,11 @@
   lib,
   config,
   ...
-}:
-
-let
+}: let
   inherit (lib) mkEnableOption mkIf;
 
   cfg = config.module.services.searxng;
-in
-{
+in {
   options = {
     module.services.searxng.enable = mkEnableOption "Enable SearXNG";
   };
@@ -74,7 +71,7 @@ in
         };
 
         # Search engines
-        engines = lib.mapAttrsToList (name: value: { inherit name; } // value) {
+        engines = lib.mapAttrsToList (name: value: {inherit name;} // value) {
           "duckduckgo".disabled = true;
           "brave".disabled = true;
           "bing".disabled = false;

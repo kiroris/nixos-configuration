@@ -3,14 +3,11 @@
   config,
   pkgs,
   ...
-}:
-
-let
+}: let
   inherit (lib) mkEnableOption mkIf mkForce;
 
   cfg = config.module.programs.thunar;
-in
-{
+in {
   options = {
     module.programs.thunar.enable = mkEnableOption "Enable Thunar file manager";
   };
@@ -24,7 +21,7 @@ in
       package = mkForce pkgs.gnome.gvfs;
     };
 
-    environment.systemPackages = with pkgs; [ file-roller ];
+    environment.systemPackages = with pkgs; [file-roller];
 
     programs.thunar.plugins = with pkgs.xfce; [
       thunar-archive-plugin # Requires an Archive manager like file-roller, ark, etc

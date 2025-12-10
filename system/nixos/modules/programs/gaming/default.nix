@@ -4,13 +4,9 @@
   pkgs,
   ...
 }:
-
-with lib;
-
-let
+with lib; let
   cfg = config.module.programs.gaming;
-in
-{
+in {
   options = {
     module.programs.gaming.enable = mkEnableOption "Enables things needed for gaming";
   };
@@ -54,7 +50,7 @@ in
             "--bind $HOME/Games/Steam $HOME/.local/share/Steam"
           ];
         };
-        extraCompatPackages = [ pkgs.proton-ge-bin ];
+        extraCompatPackages = [pkgs.proton-ge-bin];
       };
     };
 

@@ -3,13 +3,9 @@
   config,
   ...
 }:
-
-with lib;
-
-let
+with lib; let
   cfg = config.module.services.journald;
-in
-{
+in {
   options = {
     module.services.journald.enable = mkEnableOption "Journald tuning";
   };

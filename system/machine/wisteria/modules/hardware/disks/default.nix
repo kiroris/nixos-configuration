@@ -1,6 +1,4 @@
-_:
-
-{
+_: {
   services.fstrim = {
     enable = true;
     interval = "weekly";
@@ -10,7 +8,7 @@ _:
     "/boot" = {
       device = "UUID=0D8D-4BEA";
       fsType = "vfat";
-      options = [ "umask=0077" ];
+      options = ["umask=0077"];
     };
 
     "/" = {

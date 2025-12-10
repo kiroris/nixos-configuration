@@ -4,16 +4,16 @@
   pkgs,
   utils,
   ...
-}:
-
-let
-  inherit (lib)
+}: let
+  inherit
+    (lib)
     mkEnableOption
     mkIf
     mkOption
     mkForce
     ;
-  inherit (lib.types)
+  inherit
+    (lib.types)
     str
     listOf
     attrs
@@ -21,8 +21,7 @@ let
     ;
   inherit (utils) genJqSecretsReplacementSnippet;
 
-  genYqSecretsReplacementSnippet =
-    attrs: fileIn: fileOut:
+  genYqSecretsReplacementSnippet = attrs: fileIn: fileOut:
     (genJqSecretsReplacementSnippet attrs fileIn)
     + ''
       ${pkgs.yq-go}/bin/yq -Poy ${fileIn} > ${fileOut}
@@ -31,8 +30,7 @@ let
     '';
 
   cfg = config.module.services.adguard-home;
-in
-{
+in {
   options = {
     module.services.adguard-home = {
       enable = mkEnableOption "Enables adguard-home";
@@ -49,17 +47,17 @@ in
 
       bindHosts = mkOption {
         type = listOf str;
-        default = [ "0.0.0.0" ];
+        default = ["0.0.0.0"];
       };
 
       dnsRewrites = mkOption {
         type = listOf attrs;
-        default = [ ];
+        default = [];
       };
 
       users = mkOption {
         type = listOf attrs;
-        default = [ ];
+        default = [];
       };
     };
   };
@@ -68,8 +66,8 @@ in
     systemd.services.adguardhome = {
       preStart = mkForce (
         genYqSecretsReplacementSnippet config.services.adguardhome.settings
-          "/var/lib/AdGuardHome/AdGuardHome.json"
-          "/var/lib/AdGuardHome/AdGuardHome.yaml"
+        "/var/lib/AdGuardHome/AdGuardHome.json"
+        "/var/lib/AdGuardHome/AdGuardHome.yaml"
       );
 
       serviceConfig = {

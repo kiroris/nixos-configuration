@@ -3,13 +3,9 @@
   config,
   ...
 }:
-
-with lib;
-
-let
+with lib; let
   cfg = config.module.services.oomd;
-in
-{
+in {
   options = {
     module.services.oomd.enable = mkEnableOption "Enables systemd-oomd";
   };

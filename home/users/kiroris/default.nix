@@ -4,16 +4,13 @@
   swayEnable ? false,
   wmEnable ? false,
   ...
-}:
-
-{
+}: {
   #stylix.targets = {
   #  helix.enable = false;
   #  nvf.enable = false;
   #};
 
   module = {
-
     btop.enable = isWorkstation;
     chromium.enable = isWorkstation;
     eza.enable = true;
@@ -50,12 +47,6 @@
     #zed
     zoxide.enable = true;
     #zsh
-
-
-
-
-
-
 
     #user = {
     #  xdg.enable = isWorkstation;

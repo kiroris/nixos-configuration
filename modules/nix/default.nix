@@ -5,15 +5,12 @@
   username,
   inputs,
   ...
-}:
-
-let
+}: let
   inherit (lib) mkEnableOption mkOption mkIf;
   inherit (lib.types) bool;
 
   cfg = config.module.nix-config;
-in
-{
+in {
   options = {
     module.nix-config = {
       enable = mkEnableOption "Enables nix-config";
@@ -58,7 +55,7 @@ in
       # daemonIOSchedPriority = 7;
 
       settings = {
-        allowed-users = [ "@wheel" ];
+        allowed-users = ["@wheel"];
 
         trusted-users = [
           "root"

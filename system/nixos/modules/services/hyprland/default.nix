@@ -4,14 +4,11 @@
   pkgs,
   inputs,
   ...
-}:
-
-let
+}: let
   inherit (lib) mkEnableOption mkIf;
 
   cfg = config.module.services.hyprland;
-in
-{
+in {
   options = {
     module.services.hyprland.enable = mkEnableOption "Enables hyprland";
   };

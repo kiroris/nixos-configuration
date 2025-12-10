@@ -2,13 +2,10 @@
   lib,
   pkgs,
   ...
-}:
-
-let
+}: let
   inherit (lib) mkOption;
   inherit (lib.types) str;
-in
-{
+in {
   options.module.defaults = {
     audioControlCmd = mkOption {
       type = str;

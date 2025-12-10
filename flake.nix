@@ -123,17 +123,18 @@
     };
   };
 
-  outputs =
-    { self, flake-parts, ... }@inputs:
+  outputs = {
+    self,
+    flake-parts,
+    ...
+  } @ inputs: let
+    # Description of hosts
+    hosts = import ./hosts.nix;
 
-    let
-      # Description of hosts
-      hosts = import ./hosts.nix;
-
-      # Import helper funcfions
-      libx = import ./lib { inherit self inputs; };
-    in
-    flake-parts.lib.mkFlake { inherit inputs; } {
+    # Import helper funcfions
+    libx = import ./lib {inherit self inputs;};
+  in
+    flake-parts.lib.mkFlake {inherit inputs;} {
       systems = libx.forAllSystems;
 
       imports = [
@@ -145,7 +146,7 @@
         nixosConfigurations = libx.genNixos hosts.nixos;
 
         # Templates
-        templates = import "${self}/templates" { inherit self; };
+        templates = import "${self}/templates" {inherit self;};
       };
     };
 }

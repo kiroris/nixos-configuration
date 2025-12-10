@@ -2,15 +2,13 @@
   config,
   pkgs,
   ...
-}:
-
-{
+}: {
   # Kernel settings
   boot = {
     #kernelPackages = pkgs.linuxPackages_cachyos-lto;
     kernelPackages = pkgs.linuxPackages_zen;
 
-    extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
+    extraModulePackages = [config.boot.kernelPackages.nvidia_x11];
 
     kernelModules = [
       #"kvm-intel"

@@ -3,13 +3,9 @@
   config,
   ...
 }:
-
-with lib;
-
-let
+with lib; let
   cfg = config.module.tealdeer;
-in
-{
+in {
   options = {
     module.tealdeer.enable = mkEnableOption "Enables tldr rust client";
   };

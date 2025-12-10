@@ -3,15 +3,12 @@
   config,
   pkgs,
   ...
-}:
-
-let
+}: let
   inherit (lib) mkEnableOption mkIf mkOption;
   inherit (lib.types) str listOf package;
 
   cfg = config.module.services.postgresql;
-in
-{
+in {
   options = {
     module.services.postgresql = {
       enable = mkEnableOption "Enable postgresql";
@@ -24,7 +21,7 @@ in
 
       configurations = mkOption {
         type = listOf str;
-        default = [ ];
+        default = [];
         description = "Creates users and database";
       };
 
@@ -45,36 +42,36 @@ in
   };
 
   config = mkIf cfg.enable {
-    services.postgresql =
-      let
-        inherit (cfg) configurations;
+    services.postgresql = let
+      inherit (cfg) configurations;
 
-        ensureDatabases = [ "root" ] ++ configurations;
+      ensureDatabases = ["root"] ++ configurations;
 
-        ensureUsers = map (name: {
+      ensureUsers =
+        map (name: {
           inherit name;
           ensureDBOwnership = true;
           ensureClauses =
-            if name == "root" then
-              {
-                createdb = true;
-                createrole = true;
-                superuser = true;
-              }
-            else
-              { };
-        }) ensureDatabases;
-      in
-      {
-        inherit ensureDatabases ensureUsers;
-        inherit (cfg)
-          dataDir
-          authentication
-          enableTCPIP
-          package
-          ;
+            if name == "root"
+            then {
+              createdb = true;
+              createrole = true;
+              superuser = true;
+            }
+            else {};
+        })
+        ensureDatabases;
+    in {
+      inherit ensureDatabases ensureUsers;
+      inherit
+        (cfg)
+        dataDir
+        authentication
+        enableTCPIP
+        package
+        ;
 
-        enable = true;
-      };
+      enable = true;
+    };
   };
 }

@@ -4,15 +4,12 @@
   config,
   #pkgs,
   ...
-}:
-
-let
+}: let
   inherit (lib) mkEnableOption mkIf;
   #inherit (lib.generators) mkLuaInline;
 
   cfg = config.module.nvim;
-in
-{
+in {
   options = {
     module.nvim.enable = mkEnableOption "Enables nvim";
   };
@@ -132,7 +129,7 @@ in
       #    statusline.lualine.enable = true;
       #    comments.comment-nvim.enable = true;
       #    git.gitsigns.enable = true;
-      #    
+      #
       #    lsp.enable = true;
 
       #    languages = {

@@ -1,26 +1,23 @@
 {
-  config,
   lib,
+  config,
   pkgs,
   self,
   ...
-}:
-
-let
+}: let
   inherit (lib) mkEnableOption mkIf;
 
   cfg = config.module.sway;
 
   browser = config.module.defaults.browserCmd;
   terminal = config.module.defaults.terminalCmd;
-in
-{
+in {
   imports = [
     "${self}/home/modules/sway/keybinds"
   ];
 
-  options.module.sway = {
-    enable = mkEnableOption "Enable sway";
+  options = {
+    module.sway.enable = mkEnableOption "Enable sway";
   };
 
   config = mkIf cfg.enable {
@@ -50,10 +47,10 @@ in
       enable = true;
       systemd.enable = true;
       systemd.xdgAutostart = true;
-      checkConfig = false;       
+      checkConfig = false;
 
       extraConfig = ''
-          for_window [shell="xwayland"] title_format "[XWayland] %title"
+        for_window [shell="xwayland"] title_format "[XWayland] %title"
       '';
 
       config = {
@@ -87,7 +84,7 @@ in
           inner = 7;
         };
 
-        bars = [ ];
+        bars = [];
 
         window = {
           titlebar = false;

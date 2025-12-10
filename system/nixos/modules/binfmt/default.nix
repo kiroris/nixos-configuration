@@ -3,21 +3,18 @@
   config,
   pkgs,
   ...
-}:
-
-let
+}: let
   inherit (lib) mkEnableOption mkIf;
 
   cfg = config.module.binfmt;
-in
-{
+in {
   options = {
     module.binfmt.enable = mkEnableOption "Enable binfmt";
   };
 
   config = mkIf cfg.enable {
     boot.binfmt = {
-      emulatedSystems = [ "aarch64-linux" ];
+      emulatedSystems = ["aarch64-linux"];
 
       # Our archs that we want to emulate
       registrations = {

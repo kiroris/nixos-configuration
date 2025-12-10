@@ -3,13 +3,9 @@
   config,
   ...
 }:
-
-with lib;
-
-let
+with lib; let
   cfg = config.module.mpd;
-in
-{
+in {
   options = {
     module.mpd.enable = mkEnableOption "Enables MPD";
   };

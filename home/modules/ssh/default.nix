@@ -3,13 +3,9 @@
   config,
   ...
 }:
-
-with lib;
-
-let
+with lib; let
   cfg = config.module.ssh;
-in
-{
+in {
   options = {
     module.ssh.enable = mkEnableOption "Enables ssh client";
   };

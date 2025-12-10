@@ -1,6 +1,4 @@
-_:
-
-{
+_: {
   module = {
     binfmt.enable = true;
     bluetooth.enable = true;
@@ -42,7 +40,8 @@ _:
       disableIPV6 = true;
     };
 
-    services = { # normal check only that enabled
+    services = {
+      # normal check only that enabled
       #adguard-home
       #bolt
       #cpu-autofreq

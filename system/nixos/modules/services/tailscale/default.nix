@@ -3,13 +3,9 @@
   config,
   ...
 }:
-
-with lib;
-
-let
+with lib; let
   cfg = config.module.services.tailscale;
-in
-{
+in {
   options = {
     module.services.tailscale.enable = mkEnableOption "Enable tailscale";
   };
@@ -17,10 +13,10 @@ in
   config = mkIf cfg.enable {
     networking.firewall = {
       # Always allow traffic from your Tailscale network
-      trustedInterfaces = [ "tailscale0" ];
+      trustedInterfaces = ["tailscale0"];
 
       # Allow the Tailscale UDP port through the firewall
-      allowedUDPPorts = [ 41641 ];
+      allowedUDPPorts = [41641];
     };
 
     services.tailscale = {

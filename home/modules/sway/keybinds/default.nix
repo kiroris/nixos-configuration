@@ -1,11 +1,9 @@
 {
-  config,
   lib,
+  config,
   pkgs,
   ...
-}:
-
-let
+}: let
   inherit (lib) mkEnableOption mkIf;
 
   cfg = config.module.sway.keybindings;
@@ -39,7 +37,7 @@ let
 
     op=$(echo -e " Poweroff\n Reboot\n Suspend\n Lock\n Logout" | ${appLauncher} | ${pkgs.gawk}/bin/awk '{print tolower($2)}')
 
-    case $op in 
+    case $op in
       poweroff)
         ;&
       reboot)
@@ -55,8 +53,7 @@ let
         ;;
     esac
   '';
-in
-{
+in {
   options.module.sway.keybindings = {
     enable = mkEnableOption "Enable sway keybindings";
   };

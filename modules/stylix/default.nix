@@ -6,16 +6,17 @@
   hostname,
   theme,
   ...
-}:
-
-let
+}: let
   inherit (lib) mkEnableOption mkOption mkIf;
   inherit (lib) optionalAttrs;
   inherit (lib.types) bool;
 
   cfg = config.module.stylix;
 
-  cursorSize = if hostname == "lycoris" then 24 else 14;
+  cursorSize =
+    if hostname == "lycoris"
+    then 24
+    else 14;
 
   themes = {
     nord = {
@@ -68,8 +69,7 @@ let
       #};
     };
   };
-in
-{
+in {
   options = {
     module.stylix = {
       enable = mkEnableOption "Enables stylix";
@@ -83,44 +83,45 @@ in
   };
 
   config = mkIf cfg.enable {
-    stylix = {
-      enable = true;
-      #enableReleaseChecks = false; # Enable for debug
-      image = themes.${theme}.wallpaper;
-      autoEnable = true;
-      polarity = "dark";
-      base16Scheme = themes.${theme}.scheme;
-      #icons = themes.${theme}.icons;
+    stylix =
+      {
+        enable = true;
+        #enableReleaseChecks = false; # Enable for debug
+        image = themes.${theme}.wallpaper;
+        autoEnable = true;
+        polarity = "dark";
+        base16Scheme = themes.${theme}.scheme;
+        #icons = themes.${theme}.icons;
 
-      opacity = {
-        applications = 1.0;
-        terminal = 0.9;
-        popups = 1.0;
-        desktop = 1.0;
-      };
-
-      fonts = {
-        sizes = {
-          applications = 11;
-          terminal = 11;
-          popups = 12;
-          desktop = 11;
+        opacity = {
+          applications = 1.0;
+          terminal = 0.9;
+          popups = 1.0;
+          desktop = 1.0;
         };
 
-        serif = {
-          inherit (themes.${theme}.font) package name;
-        };
+        fonts = {
+          sizes = {
+            applications = 11;
+            terminal = 11;
+            popups = 12;
+            desktop = 11;
+          };
 
-        sansSerif = config.stylix.fonts.serif;
-        monospace = config.stylix.fonts.serif;
-        emoji = config.stylix.fonts.serif;
+          serif = {
+            inherit (themes.${theme}.font) package name;
+          };
+
+          sansSerif = config.stylix.fonts.serif;
+          monospace = config.stylix.fonts.serif;
+          emoji = config.stylix.fonts.serif;
+        };
+      }
+      // optionalAttrs cfg.useCursor {
+        cursor = {
+          inherit (themes.${theme}.cursor) package name;
+          size = cursorSize;
+        };
       };
-    }
-    // optionalAttrs cfg.useCursor {
-      cursor = {
-        inherit (themes.${theme}.cursor) package name;
-        size = cursorSize;
-      };
-    };
   };
 }

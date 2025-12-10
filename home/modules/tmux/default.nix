@@ -3,14 +3,11 @@
   config,
   pkgs,
   ...
-}:
-
-let
+}: let
   inherit (lib) mkEnableOption mkIf;
 
   cfg = config.module.tmux;
-in
-{
+in {
   options = {
     module.tmux.enable = mkEnableOption "Enables tmux";
   };
@@ -31,7 +28,7 @@ in
       #  set -ga update-environment TERM_PROGRAM
 
       #  # set terminal title
-      #  set -g set-titles on          
+      #  set -g set-titles on
 
       #  # boost history
       #  set -g history-limit 10000

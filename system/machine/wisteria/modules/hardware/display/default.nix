@@ -1,9 +1,4 @@
-{
-  username,
-  ...
-}:
-
-let
+{username, ...}: let
   settings = {
     sway = {
       output = {
@@ -19,18 +14,54 @@ let
       };
 
       workspaceOutputAssign = [
-        { workspace = "1";  output = "HDMI-A-1"; }
-        { workspace = "2";  output = "HDMI-A-1"; }
-        { workspace = "3";  output = "HDMI-A-1"; }
-        { workspace = "4";  output = "HDMI-A-1"; }
-        { workspace = "5";  output = "HDMI-A-1"; }
-        { workspace = "6";  output = "HDMI-A-1"; }
-        { workspace = "7";  output = "DP-1"; }
-        { workspace = "8";  output = "DP-1"; }
-        { workspace = "9";  output = "DP-1"; }
-        { workspace = "10"; output = "DP-1"; }
-        { workspace = "11"; output = "DP-1"; }
-        { workspace = "12"; output = "DP-1"; }
+        {
+          workspace = "1";
+          output = "HDMI-A-1";
+        }
+        {
+          workspace = "2";
+          output = "HDMI-A-1";
+        }
+        {
+          workspace = "3";
+          output = "HDMI-A-1";
+        }
+        {
+          workspace = "4";
+          output = "HDMI-A-1";
+        }
+        {
+          workspace = "5";
+          output = "HDMI-A-1";
+        }
+        {
+          workspace = "6";
+          output = "HDMI-A-1";
+        }
+        {
+          workspace = "7";
+          output = "DP-1";
+        }
+        {
+          workspace = "8";
+          output = "DP-1";
+        }
+        {
+          workspace = "9";
+          output = "DP-1";
+        }
+        {
+          workspace = "10";
+          output = "DP-1";
+        }
+        {
+          workspace = "11";
+          output = "DP-1";
+        }
+        {
+          workspace = "12";
+          output = "DP-1";
+        }
       ];
     };
 
@@ -56,8 +87,7 @@ let
       ];
     };
   };
-in
-{
+in {
   home-manager.users.${username}.wayland.windowManager = {
     sway.config = settings.sway;
     hyprland.settings = settings.hyprland;

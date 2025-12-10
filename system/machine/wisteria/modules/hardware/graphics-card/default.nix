@@ -2,9 +2,7 @@
 #  pkgs,
 #  ...
 #}:
-_:
-
-{
+_: {
   services.xserver.videoDrivers = [
     "amdgpu" # "nvidia"
   ];

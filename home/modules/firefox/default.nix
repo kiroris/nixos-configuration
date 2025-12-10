@@ -4,15 +4,11 @@
   pkgs,
   ...
 }:
-
-with lib;
-
-let
+with lib; let
   cfg = config.module.firefox;
-in
-{
+in {
   options = {
-    module.firefox.enable = mkEnableOption "Enables firefox browser";
+    module.firefox.enable = mkEnableOption "Enables firefox";
   };
 
   config = mkIf cfg.enable {
@@ -125,7 +121,7 @@ in
             "youtube" = {
               icon = "https://youtube.com/favicon.ico";
               updateInterval = 24 * 60 * 60 * 1000;
-              definedAliases = [ "@yt" ];
+              definedAliases = ["@yt"];
               urls = [
                 {
                   template = "https://www.youtube.com/results";
@@ -141,7 +137,7 @@ in
 
             "Nix Packages" = {
               icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-              definedAliases = [ "@np" ];
+              definedAliases = ["@np"];
               urls = [
                 {
                   template = "https://search.nixos.org/packages";
@@ -161,7 +157,7 @@ in
 
             "NixOS Options" = {
               icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-              definedAliases = [ "@no" ];
+              definedAliases = ["@no"];
               urls = [
                 {
                   template = "https://search.nixos.org/options";
@@ -182,7 +178,7 @@ in
             "GitHub" = {
               icon = "https://github.com/favicon.ico";
               updateInterval = 24 * 60 * 60 * 1000;
-              definedAliases = [ "@gh" ];
+              definedAliases = ["@gh"];
 
               urls = [
                 {
@@ -199,7 +195,7 @@ in
 
             "Home Manager" = {
               icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-              definedAliases = [ "@hm" ];
+              definedAliases = ["@hm"];
 
               url = [
                 {

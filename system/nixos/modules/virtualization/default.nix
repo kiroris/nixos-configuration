@@ -3,14 +3,11 @@
   config,
   pkgs,
   ...
-}:
-
-let
+}: let
   inherit (lib) mkEnableOption mkIf;
 
   cfg = config.module.virtualization;
-in
-{
+in {
   options = {
     module.virtualization.enable = mkEnableOption "Enables virtualisation";
   };
@@ -24,7 +21,7 @@ in
     virtualisation = {
       docker = {
         enable = true;
-        extraPackages = with pkgs; [ docker-compose ];
+        extraPackages = with pkgs; [docker-compose];
         #storageDriver = "btrfs";
       };
 

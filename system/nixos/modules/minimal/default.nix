@@ -1,15 +1,12 @@
 {
-  config,
   lib,
+  config,
   ...
-}:
-
-let
+}: let
   inherit (lib) mkEnableOption mkIf mkDefault;
 
   cfg = config.module.minimal;
-in
-{
+in {
   options = {
     module.minimal.enable = mkEnableOption "Debloated size";
   };
@@ -34,7 +31,7 @@ in
 
       # Disable all packages installed by default, I prefer my own packages
       # this list normally includes things like perl
-      defaultPackages = lib.mkForce [ ];
+      defaultPackages = lib.mkForce [];
     };
 
     services.logrotate.enable = mkDefault false;
