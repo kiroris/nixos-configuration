@@ -13,6 +13,7 @@
       '';
 
       packages = with pkgs; [
+        alejandra
         yazi
         git
         curl

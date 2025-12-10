@@ -11,7 +11,7 @@
   #};
 
   module = {
-    btop.enable = isWorkstation;
+    btop.enable = true;
     chromium.enable = isWorkstation;
     eza.enable = true;
     #fastfetch
@@ -19,7 +19,6 @@
     foot.enable = wmEnable && isWorkstation;
     fzf.enable = true; # fix zshIntegration
     git.enable = true; # add key
-    #htop.enable = true; # check a htoprc
     #hypridle
     #hyprland
     #hyprlock

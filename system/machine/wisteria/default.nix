@@ -1,14 +1,14 @@
 _: {
   module = {
-    binfmt.enable = true;
-    bluetooth.enable = true;
+    #binfmt.enable = true;
+    #bluetooth.enable = true;
     boot.enable = true;
     #lanzaboote
     locales.enable = true;
     minimal.enable = true;
     network.enable = true;
     #nixos-ng - kill my system whathell??
-    plymouth.enable = true;
+    #plymouth.enable = true;
     sound.enable = true;
     timedate.enable = true;
     users.enable = true;
@@ -21,15 +21,16 @@ _: {
 
     programs = {
       #dconf
-      #gaming.enable = true;
+      gaming.enable = true;
       #gnupg
       hm.enable = true;
-      kdeconnect.enable = true;
+      #kdeconnect.enable = true;
       #mtr
       nh.enable = true;
       #pihole
       systemPackages.enable = true;
       #thunar
+      #trading.enable = true;
       xdg-portal.enable = true;
       zsh.enable = true;
     };

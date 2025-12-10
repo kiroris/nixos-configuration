@@ -14,7 +14,6 @@ in {
       type = enum [
         "firefox"
         "chromium"
-        "luakit"
       ];
 
       default = "firefox";
@@ -24,7 +23,6 @@ in {
       browserExecs = {
         firefox = "${pkgs.firefox}/bin/firefox";
         chromium = "${pkgs.ungoogled-chromium}/bin/chromium";
-        luakit = "${pkgs.luakit}/bin/luakit";
       };
     in
       mkOption {
