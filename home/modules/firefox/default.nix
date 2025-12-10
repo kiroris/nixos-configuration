@@ -51,8 +51,8 @@ in {
           "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
           "browser.privatebrowsing.forceMediaMemoryCache" = true;
           "privacy.userContext.ui.enabled" = true;
-          "media.eme.enabled" = false;
-          "browser.eme.ui.enabled" = false;
+          "media.eme.enabled" = true;
+          "browser.eme.ui.enabled" = true;
 
           # disable annoying web features
           "dom.push.enabled" = false; # no notifications, really...
