@@ -1,14 +1,14 @@
 {
-  self,
+  #self,
   lib,
   config,
-  pkgs,
+  #pkgs,
   ...
 }:
 
 let
   inherit (lib) mkEnableOption mkIf;
-  inherit (lib.generators) mkLuaInline;
+  #inherit (lib.generators) mkLuaInline;
 
   cfg = config.module.nvim;
 in

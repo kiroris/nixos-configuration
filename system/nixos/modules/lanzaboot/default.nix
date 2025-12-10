@@ -22,7 +22,7 @@ in
     };
 
     boot.lanzaboote = {
-      enable    = true;
+      enable = true;
       pkiBundle = "/etc/secureboot";
     };
   };

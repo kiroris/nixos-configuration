@@ -26,6 +26,7 @@
           "**/.gitkeep"
 
           "secrets/**"
+          "home/**"
         ];
       };
 

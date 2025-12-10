@@ -18,8 +18,13 @@ in
     # Git config
     programs.git = {
       enable = true;
-      userName = "kiroris";
-      userEmail = "kiroris@proton.me";
+
+      settings = {
+        user = {
+          name = "kiroris";
+          email = "kiroris@proton.me";
+        };
+      };
 
       #signing = {
       #  key = "7B6BA4FE97BE8BD3FA5E1E916B20D24B4760B605";

@@ -23,8 +23,7 @@ let
 
   stateVersion = hmStateVersion;
   isRoot = username == "root";
-  homeDirectory =
-    if isRoot then "/root" else "/home/${username}";
+  homeDirectory = if isRoot then "/root" else "/home/${username}";
   userConfigurationPath = "${self}/home/users/${username}";
   userConfigurationPathExist = builtins.pathExists userConfigurationPath;
   userModulesPath = "${self}/home/users/${username}/modules";
