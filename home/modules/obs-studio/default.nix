@@ -12,7 +12,7 @@ let
 in
 {
   options = {
-    module.obs-studio.enable = mkEnableOption "Enables btop";
+    module.obs-studio.enable = mkEnableOption "Enables OBS";
   };
 
   config = mkIf cfg.enable {

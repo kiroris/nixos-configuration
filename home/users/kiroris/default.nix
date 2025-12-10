@@ -14,24 +14,44 @@
 
   module = {
 
-
-
-
-
-
-    #hyprland.enable = hyprlandEnable && isWorkstation;
-    #hyprlock.enable = hyprlandEnable && isWorkstation;
-
-    sway.enable = swayEnable && isWorkstation;
-    #swaylock.enable = swayEnable && isWorkstation;
-
-    #hypridle.enable = wmEnable && isWorkstation;
+    btop.enable = isWorkstation;
+    chromium.enable = isWorkstation;
+    eza.enable = true;
+    #fastfetch
+    firefox.enable = isWorkstation; # change config
     foot.enable = wmEnable && isWorkstation;
-    #waybar.enable = wmEnable && isWorkstation;
-    #wofi.enable = wmEnable && isWorkstation;
-    #swaync.enable = wmEnable && isWorkstation;
+    fzf.enable = true; # fix zshIntegration
+    git.enable = true; # add key
+    #htop.enable = true; # check a htoprc
+    #hypridle
+    #hyprland
+    #hyprlock
+    #hyprpaper
+    imv.enable = isWorkstation;
+    lazygit.enable = true;
+    mpd.enable = true;
+    mpv.enable = isWorkstation;
+    nvim.enable = true; # change config
+    #obs-studio.enable = isWorkstation; # just not now
+    #password-store
+    ripgrep.enable = true;
+    #rofi
+    ssh.enable = isWorkstation;
+    sway.enable = swayEnable && isWorkstation;
+    #swaylock.enable = swayEnable && isWorkstation; # later
+    #swaync
+    tealdeer.enable = true;
+    #thunderbird
+    tmux.enable = true; # change config
+    #waybar
+    #wofi
+    yazi.enable = true; # fix a zsh integration & change config
+    zathura.enable = isWorkstation;
+    #zed
+    zoxide.enable = true;
+    #zsh
 
-    git.enable = true;
+
 
 
 

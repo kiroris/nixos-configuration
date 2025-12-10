@@ -11,7 +11,7 @@ let
 in
 {
   options = {
-    module.mpd.enable = mkEnableOption "Enables MPD and Ncmpcpp";
+    module.mpd.enable = mkEnableOption "Enables MPD";
   };
 
   config = mkIf cfg.enable {

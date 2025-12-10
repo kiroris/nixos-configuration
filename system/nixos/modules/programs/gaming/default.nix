@@ -64,9 +64,13 @@ in
       lutris
       dualsensectl
 
+      # Remote gaming
+      moonlight-qt
+      #parsec-bin
+
       # Minecraft
       openal
-      glfw-wayland-minecraft
+      glfw3-minecraft
     ];
 
     services.udev.extraRules = ''
